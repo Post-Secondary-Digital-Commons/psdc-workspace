@@ -1,5 +1,14 @@
 # PSDC Multi-Organization Workspace
 
+
+> Standard: PSDC-DOC-001
+> Document type: repository-index
+> Status: Normative
+> Owner: Workspace Maintainers
+> Accountable maintainer: RedjiJB until delegation
+> Last reviewed: 2026-09-11
+> Governing decisions: none; index governed by repository policy
+
 This Git repository coordinates local checkouts and Obsidian navigation. It does
 not contain product source. Every directory under `common/` and
 `institutions/algonquin/` is an independent Git repository ignored by this
@@ -88,6 +97,19 @@ repeatable local check from the workspace root:
 ./scripts/Test-Documentation.ps1
 ```
 
+`Test-Documentation.ps1` checks links, JSON, and structural markers. The
+substantive scope gate is separate and follows `PSDC-DOC-001`:
+
+```powershell
+./scripts/Test-DocumentQuality.ps1
+```
+
+The substantive gate classifies each Markdown document, checks its required
+sections and control block, detects thin implementation-authorizing documents,
+and reports the remaining remediation queue. A non-zero audit is an honest
+indicator that documentation work remains; it is not converted into a green
+baseline by adding empty headings.
+
 The separate YAML parse check is part of the future Woodpecker documentation
 pipeline. It validates `repos.yaml`, the OpenAPI profile, and institution
 deployment manifests with an open-source YAML parser.
@@ -102,3 +124,44 @@ architecture repository's licensing policy for the reciprocity alternatives.
 
 The former `C:\Users\jredj\dev\algonquin\Algonquin` checkout remains a migration
 and history backup; new implementation belongs in this polyrepo workspace.
+
+## Purpose
+
+This index explains the purpose and placement of $dir and links readers to the authoritative documents it contains.
+
+## Allowed contents
+
+This directory belongs to $repo. It may contain scoped documentation, contracts, configuration examples, tests, and navigation links owned by this repository.
+
+## Prohibited contents
+
+It MUST NOT contain secrets, credentials, private infrastructure values, unrelated product source, copied institution overrides, or undocumented external dependencies.
+
+## Owner
+
+The owning role is $owner; accountable maintenance remains with RedjiJB until a second maintainer is appointed.
+
+## Contents
+
+- `.gitignore`
+- `.obsidian`
+- `00 - Platform Home.md`
+- `common`
+- `CONTRIBUTING.md`
+- `Ecosystems`
+- `institutions`
+- `LICENSE`
+- `Maps`
+- `NOTICE`
+- `README.md`
+- `repos.yaml`
+- `scripts`
+
+## References
+
+- [Ecosystem documentation quality standard](https://github.com/Post-Secondary-Digital-Commons/psdc-architecture/blob/main/docs/standards/Ecosystem-Documentation-Quality-Standard.md)
+- [Repository governance](https://github.com/Post-Secondary-Digital-Commons/psdc-architecture/blob/main/docs/governance/GitHub-Repository-Governance.md)
+
+## Contribution and change control
+
+Changes MUST use a pull request, preserve the repository boundary, update affected links and contracts, and pass the structural and substantive documentation audits before merge.

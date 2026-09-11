@@ -92,8 +92,10 @@ foreach ($architectureRoot in $architectureRoots) {
     $completedSpecifications = @(Get-ChildItem -LiteralPath (Join-Path $architectureRoot 'docs') -Recurse -File -Filter '*.md' |
         Where-Object {
             $specificationContent = Get-Content -LiteralPath $_.FullName -Raw
-            $specificationContent -match '## Purpose and outcome' -or
+            $specificationContent -notmatch '(?m)^>\s*Document type:\s*template\s*$' -and
+            ($specificationContent -match '## Purpose and outcome' -or
                 $_.Name -eq 'PSDC-Web-Foundation.md'
+            )
         })
     if ($completedSpecifications.Count -ne 423) {
         Add-Failure 'specification-inventory' $architectureRoot "expected 423, found $($completedSpecifications.Count)"
