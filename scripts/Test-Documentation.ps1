@@ -97,8 +97,9 @@ foreach ($architectureRoot in $architectureRoots) {
                 $_.Name -eq 'PSDC-Web-Foundation.md'
             )
         })
-    if ($completedSpecifications.Count -ne 423) {
-        Add-Failure 'specification-inventory' $architectureRoot "expected 423, found $($completedSpecifications.Count)"
+    $expectedSpecifications = if ($architectureRoot -match '[\\/]institutions[\\/]algonquin') { 447 } else { 445 }
+    if ($completedSpecifications.Count -ne $expectedSpecifications) {
+        Add-Failure 'specification-inventory' $architectureRoot "expected $expectedSpecifications, found $($completedSpecifications.Count)"
     }
 }
 
@@ -107,4 +108,4 @@ if ($failures.Count -gt 0) {
     throw "Documentation validation failed with $($failures.Count) issue(s)."
 }
 
-Write-Output "Documentation validation passed: $($markdownFiles.Count) Markdown files, $($jsonFiles.Count) JSON files, 423 completed specifications per architecture repository, and zero broken local links or unresolved specification markers."
+Write-Output "Documentation validation passed: $($markdownFiles.Count) Markdown files, $($jsonFiles.Count) JSON files, 445 Commons and 447 Algonquin completed specifications, and zero broken local links or unresolved specification markers."
