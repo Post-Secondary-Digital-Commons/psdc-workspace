@@ -34,6 +34,13 @@ defaults:
   license: Apache-2.0
   contributionPolicy: upstream-first
 governance:
+  organizationDefaultPermission: none
+  memberRepositoryCreation: false
+  memberPagesCreation: false
+  protectedMainPushActors:
+    - RedjiJB
+  clubMembersTeamPermission: triage
+  maintainersTeamPermission: maintain
   pullRequestRequired: true
   approvingReviewsRequired: 0
   approvingReviewsTarget: 1
@@ -46,3 +53,11 @@ governance:
   commonHistoryPolicy: linear
   institutionHistoryPolicy: upstream-merge-commits-allowed
   requiredStatusChecks: pending-self-hosted-ci
+  webCommitSignoffRequired: true
+  secretScanning: enabled
+  secretScanningPushProtection: enabled
+  dependencyVulnerabilityAlerts: enabled
+  automatedSecurityFixes: enabled
+  privateVulnerabilityReporting: enabled
+  repositoryWikis: disabled
+  twoFactorRequirement: pending-github-settings-ui
