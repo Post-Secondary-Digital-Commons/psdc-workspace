@@ -83,9 +83,26 @@ foreach ($file in $markdownFiles | Where-Object { $_.FullName -match '[\\/]commo
     }
 }
 
+$architectureRoots = @(
+    (Join-Path $rootPath 'common\psdc-architecture'),
+    (Join-Path $rootPath 'institutions\algonquin\algonquin-architecture')
+)
+foreach ($architectureRoot in $architectureRoots) {
+    if (-not (Test-Path -LiteralPath $architectureRoot)) { continue }
+    $completedSpecifications = @(Get-ChildItem -LiteralPath (Join-Path $architectureRoot 'docs') -Recurse -File -Filter '*.md' |
+        Where-Object {
+            $specificationContent = Get-Content -LiteralPath $_.FullName -Raw
+            $specificationContent -match '## Purpose and outcome' -or
+                $_.Name -eq 'PSDC-Web-Foundation.md'
+        })
+    if ($completedSpecifications.Count -ne 423) {
+        Add-Failure 'specification-inventory' $architectureRoot "expected 423, found $($completedSpecifications.Count)"
+    }
+}
+
 if ($failures.Count -gt 0) {
     $failures | Sort-Object | ForEach-Object { Write-Error $_ -ErrorAction Continue }
     throw "Documentation validation failed with $($failures.Count) issue(s)."
 }
 
-Write-Output "Documentation validation passed: $($markdownFiles.Count) Markdown files, $($jsonFiles.Count) JSON files, zero broken local links or unresolved specification markers."
+Write-Output "Documentation validation passed: $($markdownFiles.Count) Markdown files, $($jsonFiles.Count) JSON files, 423 completed specifications per architecture repository, and zero broken local links or unresolved specification markers."
