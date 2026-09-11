@@ -28,16 +28,16 @@ These links currently point to the Algonquin reference deployment repositories.
 Their shared architectural names are Commons Cloud, Compute, AI, Media and
 Spatial, and Social Fabrics.
 
-- [[Ecosystems/AC Cloud|AC Cloud]]
-- [[Ecosystems/ACF Campus Compute Fabric|ACF Campus Compute Fabric]]
-- [[Ecosystems/AC AI|AC AI]]
-- [[Ecosystems/AC Media Fabric|AC Media Fabric]]
-- [[Ecosystems/AC Fediverse|AC Fediverse]]
+- [[Ecosystems/Commons Cloud Fabric]]
+- [[Ecosystems/Commons Compute Fabric]]
+- [[Ecosystems/Commons AI Fabric]]
+- [[Ecosystems/Commons Media and Spatial Fabric]]
+- [[Ecosystems/Commons Social Fabric]]
 
 ## Constitutional documents
 
-- [[common/psdc-architecture/docs/vision/constitutional/AC-Platform-Vision-and-Principles|Platform vision and principles]]
-- [[common/psdc-architecture/docs/vision/constitutional/AC-Platform-Reference-Architecture|Reference architecture]]
+- [[common/psdc-architecture/docs/vision/constitutional/PSDC-Platform-Vision-and-Principles|Platform vision and principles]]
+- [[common/psdc-architecture/docs/vision/constitutional/PSDC-Platform-Reference-Architecture|Reference architecture]]
 - [[common/psdc-architecture/docs/architecture/Consolidated-Ecosystem-Architecture|Consolidated ecosystem architecture]]
 - [[common/psdc-architecture/docs/architecture/Federated-Commons-Naming-and-Sovereignty|Naming and sovereignty]]
 - [[common/psdc-architecture/docs/architecture/Ecosystem-Dependency-Contract|Ecosystem dependency contract]]
@@ -46,7 +46,9 @@ Spatial, and Social Fabrics.
 - [[common/psdc-architecture/docs/governance/License-Policy|License policy]]
 - [[common/psdc-architecture/docs/governance/Commercial-and-Institutional-Upstream-Contribution-Policy|Upstream contribution policy]]
 - [[common/psdc-architecture/docs/architecture/Repository-and-Obsidian-Linking-Model|Repository and Obsidian model]]
-- [[common/psdc-architecture/docs/clients/Commons-AI-Web-Foundation|Commons AI Web foundation]]
+- [[common/psdc-architecture/docs/clients/PSDC-Web-Foundation|PSDC Web foundation]]
+- [[common/psdc-web/README|PSDC Web repository]]
+- [[institutions/algonquin/algonquin-web/README|Algonquin Web deployment repository]]
 - [[common/psdc-architecture/docs/clients/OpenWork-Desktop-Client-Foundation|OpenWork desktop foundation]]
 - [[common/psdc-architecture/docs/clients/Happy-Mobile-Client-Foundation|Happy mobile foundation]]
 - [[common/psdc-architecture/docs/clients/Happy-Ecosystem-Feature-Adoption-Scope|Happy feature adoption scope]]
@@ -56,8 +58,10 @@ Spatial, and Social Fabrics.
 - [[common/psdc-architecture/docs/vision/13-Technology-Defaults-and-Alternatives|Technology defaults and alternatives]]
 - [[common/psdc-architecture/docs/vision/14-Full-Technology-Stack-and-Open-Source-Alternatives|Full stack and open-source alternatives]]
 - [[common/psdc-architecture/docs/economics/Post-Secondary-Digital-Commons-Funding-Model|Commons funding model]]
-- [[common/psdc-architecture/docs/roadmap/Ecosystem-Gap-Analysis-2026-09-10|Current ecosystem gap analysis]]
-- [[common/psdc-architecture/docs/architecture/Documentation-Consistency-Audit-2026-09-10|Documentation consistency audit]]
+- [[common/psdc-architecture/docs/roadmap/Ecosystem-Implementation-Readiness-2026-09-11|Implementation readiness]]
+- [[common/psdc-architecture/docs/architecture/Documentation-Completion-Audit-2026-09-11|Documentation completion audit]]
+- [[common/psdc-web/README|PSDC Web client]]
+- [[institutions/algonquin/algonquin-web/README|Algonquin Web client]]
 
 ## Working rules
 

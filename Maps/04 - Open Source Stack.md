@@ -19,7 +19,7 @@ tags: [moc, open-source, technology]
 - [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0018-openwork-desktop-client]]
 - [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0019-happy-mobile-client]]
 - [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0024-permissive-license-and-upstream-contribution]]
-- [[common/psdc-architecture/docs/clients/Commons-AI-Web-Foundation]]
+- [[common/psdc-architecture/docs/clients/PSDC-Web-Foundation|PSDC Web foundation]]
 - [[common/psdc-architecture/docs/clients/OpenWork-Desktop-Client-Foundation]]
 - [[common/psdc-architecture/docs/clients/Happy-Mobile-Client-Foundation]]
 

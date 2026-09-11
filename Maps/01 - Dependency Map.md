@@ -29,11 +29,15 @@ open standards and shared contracts
      \         |         /
       \        |        /
      Commons Social Fabric
+               |
+   Web + Desktop + Mobile clients
 ```
 
 Arrows describe allowed service consumption, not database ownership. Commons Cloud has
 no runtime dependency on product systems. Compute, AI and Media remain independently
 deployable. Fediverse can operate text-only if AI or Media is unavailable.
+Clients consume only gateway and versioned domain contracts; they never depend on
+sibling databases, model runtimes, compute workers or institution-provider APIs.
 
 ## Required questions for every dependency
 

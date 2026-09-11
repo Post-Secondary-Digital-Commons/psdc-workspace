@@ -2,7 +2,7 @@
 tags: [ecosystem, compute, acf]
 ---
 
-# ACF Campus Compute Fabric
+# Commons Compute Fabric
 
 Canonical repository: [[common/psdc-compute/README|psdc-compute]].
 
@@ -20,6 +20,6 @@ scheduling, preemption, accounting, caches and runtime adapters.
 
 ## Links
 
-- [[common/psdc-architecture/docs/vision/constitutional/ACF-Compute-Fabric-Architecture]]
-- [[common/psdc-architecture/docs/acf/ACF-Architecture]]
+- [[common/psdc-architecture/docs/vision/constitutional/Commons-Compute-Fabric-Architecture]]
+- [[common/psdc-architecture/docs/campus-compute-fabric/Campus-Compute-Fabric-Architecture]]
 - [[common/psdc-architecture/docs/architecture/Ecosystem-Dependency-Contract]]

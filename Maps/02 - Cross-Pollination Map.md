@@ -28,6 +28,8 @@ Canonical guide: [[common/psdc-architecture/docs/architecture/Cross-Pollination-
 - AI + Academic: course-grounded study and faculty-controlled agents.
 - Spatial + all systems: campus navigation, captures, events, topology and privacy.
 - Developer platform + all systems: one scoped API and SDK experience.
+- Web + Desktop + Mobile: one session, identity, permission, notification,
+  accessibility and institution-branding contract across form factors.
 
 ## Guardrails
 

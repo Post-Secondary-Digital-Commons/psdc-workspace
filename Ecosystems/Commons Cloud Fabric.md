@@ -2,7 +2,7 @@
 tags: [ecosystem, cloud]
 ---
 
-# AC Cloud
+# Commons Cloud Fabric
 
 Canonical repository: [[common/psdc-cloud/README|psdc-cloud]].
 
@@ -16,11 +16,11 @@ and shared platform operations.
 
 - Hard: self-hosted Linux, networking, storage and cluster control planes.
 - Optional: institutional Entra upstream identity and other approved adapters.
-- Prohibited: runtime dependence on AI, ACF, Media or Fediverse for core control.
+- Prohibited: runtime dependence on AI, Compute, Media or Social fabrics for core control.
 
 ## Links
 
-- [[common/psdc-architecture/docs/vision/constitutional/AC-Cloud-Service-Taxonomy-v1]]
+- [[common/psdc-architecture/docs/vision/constitutional/Commons-Cloud-Service-Taxonomy-v1]]
 - [[common/psdc-architecture/docs/cloud/Cloud-Control-Plane]]
 - [[Maps/01 - Dependency Map]]
 - [[Maps/04 - Open Source Stack]]
