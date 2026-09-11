@@ -62,6 +62,15 @@ maintainer. Raise it to one and require code-owner review after a second
 authorized maintainer is appointed. Required CI checks will be added after the
 self-hosted Woodpecker pipelines exist.
 
+Both organizations use deny-by-default membership: organization membership
+grants no repository permission, members cannot create repositories or Pages,
+and only `RedjiJB` may update protected `main`. The `Club Members` team has
+triage access and the `Maintainers` team has maintain access; neither team can
+update protected `main` until explicitly promoted by the governance process.
+Secret scanning, push protection, Dependabot security alerts and fixes, private
+vulnerability reporting, web commit signoff, and repository-wiki disabling are
+active across all 19 repositories.
+
 ## Licensing
 
 New PSDC-authored code uses Apache-2.0 by default. Upstream-derived files retain
