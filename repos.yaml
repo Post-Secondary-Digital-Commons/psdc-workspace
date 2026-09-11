@@ -33,3 +33,16 @@ defaults:
   institutionRemote: origin
   license: Apache-2.0
   contributionPolicy: upstream-first
+governance:
+  pullRequestRequired: true
+  approvingReviewsRequired: 0
+  approvingReviewsTarget: 1
+  dismissStaleReviews: true
+  requireConversationResolution: true
+  enforceForAdministrators: true
+  allowForcePushes: false
+  allowBranchDeletion: false
+  deleteMergedBranches: true
+  commonHistoryPolicy: linear
+  institutionHistoryPolicy: upstream-merge-commits-allowed
+  requiredStatusChecks: pending-self-hosted-ci
