@@ -1,0 +1,7 @@
+# Independent repositories are nested workspace checkouts, never vendored here.
+/common/
+/institutions/
+
+# Local artifacts
+/sandbox/
+*.log

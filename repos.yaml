@@ -1,0 +1,34 @@
+schemaVersion: 2
+workspace: fpsdc-workspace
+repositoryPolicy: upstream-and-institution-forks
+gitAuthorName: RedjiJB
+githubOrganizations:
+  common: null
+  algonquin: null
+repositories:
+  - common: { name: fpsdc-architecture, path: common/fpsdc-architecture, remote: null }
+    algonquin: { name: algonquin-architecture, path: institutions/algonquin/algonquin-architecture, remote: null }
+  - common: { name: fpsdc-cloud, path: common/fpsdc-cloud, remote: null }
+    algonquin: { name: algonquin-cloud, path: institutions/algonquin/algonquin-cloud, remote: null }
+  - common: { name: fpsdc-ai, path: common/fpsdc-ai, remote: null }
+    algonquin: { name: algonquin-ai, path: institutions/algonquin/algonquin-ai, remote: null }
+  - common: { name: fpsdc-compute, path: common/fpsdc-compute, remote: null }
+    algonquin: { name: algonquin-compute, path: institutions/algonquin/algonquin-compute, remote: null }
+  - common: { name: fpsdc-media, path: common/fpsdc-media, remote: null }
+    algonquin: { name: algonquin-media, path: institutions/algonquin/algonquin-media, remote: null }
+  - common: { name: fpsdc-social, path: common/fpsdc-social, remote: null }
+    algonquin: { name: algonquin-social, path: institutions/algonquin/algonquin-social, remote: null }
+  - common: { name: fpsdc-openwork-desktop, path: common/fpsdc-openwork-desktop, remote: null }
+    algonquin: { name: algonquin-openwork-desktop, path: institutions/algonquin/algonquin-openwork-desktop, remote: null }
+  - common: { name: fpsdc-happy-mobile, path: common/fpsdc-happy-mobile, remote: null }
+    algonquin: { name: algonquin-happy-mobile, path: institutions/algonquin/algonquin-happy-mobile, remote: null }
+  - common: { name: fpsdc-deployment-template, path: common/fpsdc-deployment-template, remote: null }
+    algonquin: { name: algonquin-deployment, path: institutions/algonquin/algonquin-deployment, remote: null }
+
+defaults:
+  branch: main
+  upstreamRemote: upstream
+  institutionRemote: origin
+  license: Apache-2.0
+  contributionPolicy: upstream-first
+
