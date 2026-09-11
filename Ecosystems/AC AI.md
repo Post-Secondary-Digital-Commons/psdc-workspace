@@ -4,7 +4,7 @@ tags: [ecosystem, ai]
 
 # AC AI
 
-Canonical repository: [[common/fpsdc-ai/README|fpsdc-ai]].
+Canonical repository: [[common/psdc-ai/README|psdc-ai]].
 
 ## Owns
 
@@ -23,10 +23,10 @@ and AI clients.
 
 ## Links
 
-- [[common/fpsdc-architecture/docs/vision/constitutional/AC-AI-Platform-Architecture]]
-- [[common/fpsdc-architecture/docs/ai/AI-Gateway]]
-- [[common/fpsdc-architecture/docs/ai/Model-Router]]
-- [[common/fpsdc-architecture/docs/clients/Commons-AI-Web-Foundation]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0009-fpsdc-ai-web-foundation|ADR-0009 Web foundation]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0010-provider-neutral-core-institutional-production-authority|ADR-0010 Production authorities]]
+- [[common/psdc-architecture/docs/vision/constitutional/AC-AI-Platform-Architecture]]
+- [[common/psdc-architecture/docs/ai/AI-Gateway]]
+- [[common/psdc-architecture/docs/ai/Model-Router]]
+- [[common/psdc-architecture/docs/clients/Commons-AI-Web-Foundation]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0009-psdc-ai-web-foundation|ADR-0009 Web foundation]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0010-provider-neutral-core-institutional-production-authority|ADR-0010 Production authorities]]
 - [[Maps/02 - Cross-Pollination Map]]

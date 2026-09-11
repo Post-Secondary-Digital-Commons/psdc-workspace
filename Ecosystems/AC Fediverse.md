@@ -4,7 +4,7 @@ tags: [ecosystem, fediverse, activitypub]
 
 # AC Fediverse
 
-Canonical repository: [[common/fpsdc-social/README|fpsdc-social]].
+Canonical repository: [[common/psdc-social/README|psdc-social]].
 
 ## Owns
 
@@ -21,6 +21,6 @@ moderation, abuse response and the public ActivityPub boundary.
 
 ## Links
 
-- [[common/fpsdc-architecture/docs/vision/constitutional/Fediverse-Platform-Architecture]]
-- [[common/fpsdc-architecture/docs/fediverse/ActivityPub-Architecture]]
-- [[common/fpsdc-architecture/docs/architecture/03-activitypub-federation]]
+- [[common/psdc-architecture/docs/vision/constitutional/Fediverse-Platform-Architecture]]
+- [[common/psdc-architecture/docs/fediverse/ActivityPub-Architecture]]
+- [[common/psdc-architecture/docs/architecture/03-activitypub-federation]]

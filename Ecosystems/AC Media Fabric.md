@@ -4,7 +4,7 @@ tags: [ecosystem, media, spatial]
 
 # AC Media Fabric
 
-Canonical repository: [[common/fpsdc-media/README|fpsdc-media]].
+Canonical repository: [[common/psdc-media/README|psdc-media]].
 
 ## Owns
 
@@ -20,6 +20,6 @@ Media identity, manifests, provenance, rights, moderation, processing, spatial a
 
 ## Links
 
-- [[common/fpsdc-architecture/docs/media/Media-Fabric-Architecture]]
-- [[common/fpsdc-architecture/docs/media/Spatial-Media-Architecture]]
-- [[common/fpsdc-architecture/docs/architecture/Cross-Pollination-and-Shared-Capabilities]]
+- [[common/psdc-architecture/docs/media/Media-Fabric-Architecture]]
+- [[common/psdc-architecture/docs/media/Spatial-Media-Architecture]]
+- [[common/psdc-architecture/docs/architecture/Cross-Pollination-and-Shared-Capabilities]]

@@ -4,7 +4,7 @@ tags: [ecosystem, cloud]
 
 # AC Cloud
 
-Canonical repository: [[common/fpsdc-cloud/README|fpsdc-cloud]].
+Canonical repository: [[common/psdc-cloud/README|psdc-cloud]].
 
 ## Owns
 
@@ -20,7 +20,7 @@ and shared platform operations.
 
 ## Links
 
-- [[common/fpsdc-architecture/docs/vision/constitutional/AC-Cloud-Service-Taxonomy-v1]]
-- [[common/fpsdc-architecture/docs/cloud/Cloud-Control-Plane]]
+- [[common/psdc-architecture/docs/vision/constitutional/AC-Cloud-Service-Taxonomy-v1]]
+- [[common/psdc-architecture/docs/cloud/Cloud-Control-Plane]]
 - [[Maps/01 - Dependency Map]]
 - [[Maps/04 - Open Source Stack]]

@@ -1,4 +1,4 @@
-# FPSDC Multi-Organization Workspace
+# PSDC Multi-Organization Workspace
 
 This Git repository coordinates local checkouts and Obsidian navigation. It does
 not contain product source. Every directory under `common/` and
@@ -8,17 +8,17 @@ workspace repository.
 ## Organization topology
 
 ```text
-fpsdc/
+psdc/
 ├── common/                         Commons GitHub organization checkouts
-│   ├── fpsdc-architecture/
-│   ├── fpsdc-cloud/
-│   ├── fpsdc-ai/
-│   ├── fpsdc-compute/
-│   ├── fpsdc-media/
-│   ├── fpsdc-social/
-│   ├── fpsdc-openwork-desktop/
-│   ├── fpsdc-happy-mobile/
-│   └── fpsdc-deployment-template/
+│   ├── psdc-architecture/
+│   ├── psdc-cloud/
+│   ├── psdc-ai/
+│   ├── psdc-compute/
+│   ├── psdc-media/
+│   ├── psdc-social/
+│   ├── psdc-desktop/
+│   ├── psdc-mobile/
+│   └── psdc-deployment-template/
 └── institutions/
     └── algonquin/                  Algonquin GitHub organization forks
         ├── algonquin-architecture/
@@ -27,8 +27,8 @@ fpsdc/
         ├── algonquin-compute/
         ├── algonquin-media/
         ├── algonquin-social/
-        ├── algonquin-openwork-desktop/
-        ├── algonquin-happy-mobile/
+        ├── algonquin-desktop/
+        ├── algonquin-mobile/
         └── algonquin-deployment/
 ```
 
@@ -47,7 +47,7 @@ remote URLs remain unset until those organizations are created or named.
 
 ## Licensing
 
-New FPSDC-authored code uses Apache-2.0 by default. Upstream-derived files retain
+New PSDC-authored code uses Apache-2.0 by default. Upstream-derived files retain
 their original MIT, BSD or other compatible license and notices. Contributions
 should be sent upstream, especially improvements developed for commercial use,
 but Apache-2.0 cannot legally make that contribution mandatory. See the

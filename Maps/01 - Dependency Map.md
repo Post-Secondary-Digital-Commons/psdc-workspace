@@ -10,11 +10,11 @@ database, LMS, secrets, or infrastructure-state authority.
 
 ## Canonical dependency documents
 
-- [[common/fpsdc-architecture/docs/architecture/Ecosystem-Dependency-Contract]]
-- [[common/fpsdc-architecture/docs/architecture/Dependency-Map]]
-- [[common/fpsdc-architecture/docs/architecture/Failure-Domains]]
-- [[common/fpsdc-architecture/docs/reliability/Dependency-Outage-Matrix]]
-- [[common/fpsdc-architecture/docs/architecture/Control-Plane-vs-Data-Plane]]
+- [[common/psdc-architecture/docs/architecture/Ecosystem-Dependency-Contract]]
+- [[common/psdc-architecture/docs/architecture/Dependency-Map]]
+- [[common/psdc-architecture/docs/architecture/Failure-Domains]]
+- [[common/psdc-architecture/docs/reliability/Dependency-Outage-Matrix]]
+- [[common/psdc-architecture/docs/architecture/Control-Plane-vs-Data-Plane]]
 
 ## Direction
 

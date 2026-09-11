@@ -8,7 +8,7 @@ Cross-pollination applies inside one institution and across explicitly trusted
 Commons peers. It shares contracts, conformance tests, bounded capabilities, and
 signed references—not unrestricted raw institutional data or transitive trust.
 
-Canonical guide: [[common/fpsdc-architecture/docs/architecture/Cross-Pollination-and-Shared-Capabilities]].
+Canonical guide: [[common/psdc-architecture/docs/architecture/Cross-Pollination-and-Shared-Capabilities]].
 
 ## Capability exchange
 

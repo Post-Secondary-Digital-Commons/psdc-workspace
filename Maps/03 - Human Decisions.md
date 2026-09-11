@@ -5,7 +5,7 @@ tags: [moc, decision, governance]
 # Human Decisions
 
 The authoritative register is
-[[common/fpsdc-architecture/docs/governance/Human-Choices-and-Decisions-Register|Human Choices and Decisions Register]].
+[[common/psdc-architecture/docs/governance/Human-Choices-and-Decisions-Register|Human Choices and Decisions Register]].
 
 All proposed project defaults are accepted by ADR-0016. The remaining queue is
 implementation evidence and external institutional approval, not product-choice
@@ -28,21 +28,21 @@ indecision.
 
 ## Process
 
-- [[common/fpsdc-architecture/docs/Documentation-Architecture-Standard]]
-- [[common/fpsdc-architecture/docs/architecture/Decision-Traceability-Matrix]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0001-standards-first-buy-borrow-build|ADR-0001]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0008-open-source-self-hosted-core|ADR-0008]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0009-fpsdc-ai-web-foundation|ADR-0009]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0010-provider-neutral-core-institutional-production-authority|ADR-0010]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0011-terraform-default-with-open-fallback|ADR-0011]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0012-post-secondary-digital-commons|ADR-0012]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0013-institution-first-federation-locality|ADR-0013]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0014-fediverse-social-fabric|ADR-0014]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0015-commons-funding-assumption|ADR-0015]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0016-accept-register-defaults|ADR-0016]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0017-opentofu-default|ADR-0017 Current IaC default]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0022-polyrepo-ecosystem-with-package-workspaces|ADR-0022 Polyrepo ecosystem]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0023-institution-organization-fork-model|ADR-0023 Institution forks]]
-- [[common/fpsdc-architecture/docs/architecture/architecture-decision-records/ADR-0024-permissive-license-and-upstream-contribution|ADR-0024 Licensing and contribution]]
+- [[common/psdc-architecture/docs/Documentation-Architecture-Standard]]
+- [[common/psdc-architecture/docs/architecture/Decision-Traceability-Matrix]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0001-standards-first-buy-borrow-build|ADR-0001]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0008-open-source-self-hosted-core|ADR-0008]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0009-psdc-ai-web-foundation|ADR-0009]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0010-provider-neutral-core-institutional-production-authority|ADR-0010]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0011-terraform-default-with-open-fallback|ADR-0011]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0012-post-secondary-digital-commons|ADR-0012]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0013-institution-first-federation-locality|ADR-0013]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0014-fediverse-social-fabric|ADR-0014]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0015-commons-funding-assumption|ADR-0015]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0016-accept-register-defaults|ADR-0016]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0017-opentofu-default|ADR-0017 Current IaC default]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0022-polyrepo-ecosystem-with-package-workspaces|ADR-0022 Polyrepo ecosystem]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0023-institution-organization-fork-model|ADR-0023 Institution forks]]
+- [[common/psdc-architecture/docs/architecture/architecture-decision-records/ADR-0024-permissive-license-and-upstream-contribution|ADR-0024 Licensing and contribution]]
 
 Back to [[00 - Platform Home]].

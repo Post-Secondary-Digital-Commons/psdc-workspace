@@ -1,28 +1,29 @@
 schemaVersion: 2
-workspace: fpsdc-workspace
+workspace: psdc-workspace
 repositoryPolicy: upstream-and-institution-forks
 gitAuthorName: RedjiJB
+gitAuthorEmail: jean0319@algonquinlive.com
 githubOrganizations:
   common: null
   algonquin: null
 repositories:
-  - common: { name: fpsdc-architecture, path: common/fpsdc-architecture, remote: null }
+  - common: { name: psdc-architecture, path: common/psdc-architecture, remote: null }
     algonquin: { name: algonquin-architecture, path: institutions/algonquin/algonquin-architecture, remote: null }
-  - common: { name: fpsdc-cloud, path: common/fpsdc-cloud, remote: null }
+  - common: { name: psdc-cloud, path: common/psdc-cloud, remote: null }
     algonquin: { name: algonquin-cloud, path: institutions/algonquin/algonquin-cloud, remote: null }
-  - common: { name: fpsdc-ai, path: common/fpsdc-ai, remote: null }
+  - common: { name: psdc-ai, path: common/psdc-ai, remote: null }
     algonquin: { name: algonquin-ai, path: institutions/algonquin/algonquin-ai, remote: null }
-  - common: { name: fpsdc-compute, path: common/fpsdc-compute, remote: null }
+  - common: { name: psdc-compute, path: common/psdc-compute, remote: null }
     algonquin: { name: algonquin-compute, path: institutions/algonquin/algonquin-compute, remote: null }
-  - common: { name: fpsdc-media, path: common/fpsdc-media, remote: null }
+  - common: { name: psdc-media, path: common/psdc-media, remote: null }
     algonquin: { name: algonquin-media, path: institutions/algonquin/algonquin-media, remote: null }
-  - common: { name: fpsdc-social, path: common/fpsdc-social, remote: null }
+  - common: { name: psdc-social, path: common/psdc-social, remote: null }
     algonquin: { name: algonquin-social, path: institutions/algonquin/algonquin-social, remote: null }
-  - common: { name: fpsdc-openwork-desktop, path: common/fpsdc-openwork-desktop, remote: null }
-    algonquin: { name: algonquin-openwork-desktop, path: institutions/algonquin/algonquin-openwork-desktop, remote: null }
-  - common: { name: fpsdc-happy-mobile, path: common/fpsdc-happy-mobile, remote: null }
-    algonquin: { name: algonquin-happy-mobile, path: institutions/algonquin/algonquin-happy-mobile, remote: null }
-  - common: { name: fpsdc-deployment-template, path: common/fpsdc-deployment-template, remote: null }
+  - common: { name: psdc-desktop, path: common/psdc-desktop, remote: null }
+    algonquin: { name: algonquin-desktop, path: institutions/algonquin/algonquin-desktop, remote: null }
+  - common: { name: psdc-mobile, path: common/psdc-mobile, remote: null }
+    algonquin: { name: algonquin-mobile, path: institutions/algonquin/algonquin-mobile, remote: null }
+  - common: { name: psdc-deployment-template, path: common/psdc-deployment-template, remote: null }
     algonquin: { name: algonquin-deployment, path: institutions/algonquin/algonquin-deployment, remote: null }
 
 defaults:
@@ -31,4 +32,3 @@ defaults:
   institutionRemote: origin
   license: Apache-2.0
   contributionPolicy: upstream-first
-

@@ -5,7 +5,7 @@ tags: [moc, ecosystem, architecture]
 # Ecosystem Map
 
 ```text
-        Federated Post-Secondary Digital Commons
+        Post-Secondary Digital Commons
      institution experience | neutral core | federation
                                |
                  Algonquin reference deployment
@@ -40,11 +40,11 @@ tags: [moc, ecosystem, architecture]
 
 ## Canonical architecture
 
-- [[common/fpsdc-architecture/docs/architecture/Consolidated-Ecosystem-Architecture]]
-- [[common/fpsdc-architecture/docs/vision/constitutional/AC-Platform-Reference-Architecture]]
-- [[common/fpsdc-architecture/docs/vision/04-Platform-Taxonomy]]
-- [[common/fpsdc-architecture/docs/vision/05-Capability-Map]]
-- [[common/fpsdc-architecture/docs/vision/constitutional/Post-Secondary-Digital-Commons-Architecture]]
-- [[common/fpsdc-architecture/docs/architecture/Federated-Commons-Naming-and-Sovereignty]]
+- [[common/psdc-architecture/docs/architecture/Consolidated-Ecosystem-Architecture]]
+- [[common/psdc-architecture/docs/vision/constitutional/AC-Platform-Reference-Architecture]]
+- [[common/psdc-architecture/docs/vision/04-Platform-Taxonomy]]
+- [[common/psdc-architecture/docs/vision/05-Capability-Map]]
+- [[common/psdc-architecture/docs/vision/constitutional/Post-Secondary-Digital-Commons-Architecture]]
+- [[common/psdc-architecture/docs/architecture/Federated-Commons-Naming-and-Sovereignty]]
 
 Back to [[00 - Platform Home]].
