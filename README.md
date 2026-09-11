@@ -42,8 +42,10 @@ Reusable improvements are proposed upstream to the owning Commons repository.
 Institution forks must not create incompatible private contracts or copy sibling
 source.
 
-`repos.yaml` is the checkout and fork inventory. GitHub organization slugs and
-remote URLs remain unset until those organizations are created or named.
+`repos.yaml` is the checkout and fork inventory. The neutral repositories are
+published under `Post-Secondary-Digital-Commons` and their local `origin`
+remotes are configured. The Algonquin organization slug and hosted fork URLs
+remain unset until the intended organization is confirmed.
 
 ## Licensing
 
@@ -55,4 +57,3 @@ architecture repository's licensing policy for the reciprocity alternatives.
 
 The former `C:\Users\jredj\dev\algonquin\Algonquin` checkout remains a migration
 and history backup; new implementation belongs in this polyrepo workspace.
-
