@@ -43,9 +43,10 @@ Institution forks must not create incompatible private contracts or copy sibling
 source.
 
 `repos.yaml` is the checkout and fork inventory. The neutral repositories are
-published under `Post-Secondary-Digital-Commons` and their local `origin`
-remotes are configured. The Algonquin organization slug and hosted fork URLs
-remain unset until the intended organization is confirmed.
+published under `Post-Secondary-Digital-Commons`; Algonquin's thin forks are
+published under `Algonquin-Digital-Commons`. Every local repository has its
+hosted `origin`, and each institution fork tracks the corresponding hosted
+common repository as `upstream`.
 
 ## Licensing
 

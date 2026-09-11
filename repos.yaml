@@ -6,26 +6,26 @@ gitAuthorName: RedjiJB
 gitAuthorEmail: jean0319@algonquinlive.com
 githubOrganizations:
   common: Post-Secondary-Digital-Commons
-  algonquin: null
+  algonquin: Algonquin-Digital-Commons
 repositories:
   - common: { name: psdc-architecture, path: common/psdc-architecture, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-architecture }
-    algonquin: { name: algonquin-architecture, path: institutions/algonquin/algonquin-architecture, remote: null }
+    algonquin: { name: algonquin-architecture, path: institutions/algonquin/algonquin-architecture, remote: https://github.com/Algonquin-Digital-Commons/algonquin-architecture }
   - common: { name: psdc-cloud, path: common/psdc-cloud, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-cloud }
-    algonquin: { name: algonquin-cloud, path: institutions/algonquin/algonquin-cloud, remote: null }
+    algonquin: { name: algonquin-cloud, path: institutions/algonquin/algonquin-cloud, remote: https://github.com/Algonquin-Digital-Commons/algonquin-cloud }
   - common: { name: psdc-ai, path: common/psdc-ai, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-ai }
-    algonquin: { name: algonquin-ai, path: institutions/algonquin/algonquin-ai, remote: null }
+    algonquin: { name: algonquin-ai, path: institutions/algonquin/algonquin-ai, remote: https://github.com/Algonquin-Digital-Commons/algonquin-ai }
   - common: { name: psdc-compute, path: common/psdc-compute, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-compute }
-    algonquin: { name: algonquin-compute, path: institutions/algonquin/algonquin-compute, remote: null }
+    algonquin: { name: algonquin-compute, path: institutions/algonquin/algonquin-compute, remote: https://github.com/Algonquin-Digital-Commons/algonquin-compute }
   - common: { name: psdc-media, path: common/psdc-media, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-media }
-    algonquin: { name: algonquin-media, path: institutions/algonquin/algonquin-media, remote: null }
+    algonquin: { name: algonquin-media, path: institutions/algonquin/algonquin-media, remote: https://github.com/Algonquin-Digital-Commons/algonquin-media }
   - common: { name: psdc-social, path: common/psdc-social, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-social }
-    algonquin: { name: algonquin-social, path: institutions/algonquin/algonquin-social, remote: null }
+    algonquin: { name: algonquin-social, path: institutions/algonquin/algonquin-social, remote: https://github.com/Algonquin-Digital-Commons/algonquin-social }
   - common: { name: psdc-desktop, path: common/psdc-desktop, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-desktop }
-    algonquin: { name: algonquin-desktop, path: institutions/algonquin/algonquin-desktop, remote: null }
+    algonquin: { name: algonquin-desktop, path: institutions/algonquin/algonquin-desktop, remote: https://github.com/Algonquin-Digital-Commons/algonquin-desktop }
   - common: { name: psdc-mobile, path: common/psdc-mobile, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-mobile }
-    algonquin: { name: algonquin-mobile, path: institutions/algonquin/algonquin-mobile, remote: null }
+    algonquin: { name: algonquin-mobile, path: institutions/algonquin/algonquin-mobile, remote: https://github.com/Algonquin-Digital-Commons/algonquin-mobile }
   - common: { name: psdc-deployment-template, path: common/psdc-deployment-template, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-deployment-template }
-    algonquin: { name: algonquin-deployment, path: institutions/algonquin/algonquin-deployment, remote: null }
+    algonquin: { name: algonquin-deployment, path: institutions/algonquin/algonquin-deployment, remote: https://github.com/Algonquin-Digital-Commons/algonquin-deployment }
 
 defaults:
   branch: main
