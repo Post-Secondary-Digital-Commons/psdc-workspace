@@ -48,6 +48,20 @@ published under `Algonquin-Digital-Commons`. Every local repository has its
 hosted `origin`, and each institution fork tracks the corresponding hosted
 common repository as `upstream`.
 
+## GitHub governance baseline
+
+All 19 product and workspace repositories protect `main`: changes require a pull
+request, unresolved review conversations block merging, administrators are
+covered, and force-pushes and branch deletion are disabled. Shared repositories
+also require linear history. Institution forks permit merge commits because a
+non-destructive upstream synchronization must preserve both the common and local
+overlay histories.
+
+The approval count is temporarily zero because `RedjiJB` is the only confirmed
+maintainer. Raise it to one and require code-owner review after a second
+authorized maintainer is appointed. Required CI checks will be added after the
+self-hosted Woodpecker pipelines exist.
+
 ## Licensing
 
 New PSDC-authored code uses Apache-2.0 by default. Upstream-derived files retain
