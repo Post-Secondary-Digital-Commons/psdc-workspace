@@ -20,6 +20,8 @@ repositories:
     algonquin: { name: algonquin-media, path: institutions/algonquin/algonquin-media, remote: https://github.com/Algonquin-Digital-Commons/algonquin-media }
   - common: { name: psdc-social, path: common/psdc-social, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-social }
     algonquin: { name: algonquin-social, path: institutions/algonquin/algonquin-social, remote: https://github.com/Algonquin-Digital-Commons/algonquin-social }
+  - common: { name: psdc-web, path: common/psdc-web, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-web }
+    algonquin: { name: algonquin-web, path: institutions/algonquin/algonquin-web, remote: https://github.com/Algonquin-Digital-Commons/algonquin-web }
   - common: { name: psdc-desktop, path: common/psdc-desktop, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-desktop }
     algonquin: { name: algonquin-desktop, path: institutions/algonquin/algonquin-desktop, remote: https://github.com/Algonquin-Digital-Commons/algonquin-desktop }
   - common: { name: psdc-mobile, path: common/psdc-mobile, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-mobile }
@@ -52,7 +54,7 @@ governance:
   deleteMergedBranches: true
   commonHistoryPolicy: linear
   institutionHistoryPolicy: upstream-merge-commits-allowed
-  requiredStatusChecks: pending-self-hosted-ci
+  requiredStatusChecks: deferred-until-self-hosted-ci-implementation
   webCommitSignoffRequired: true
   secretScanning: enabled
   secretScanningPushProtection: enabled
@@ -60,4 +62,4 @@ governance:
   automatedSecurityFixes: enabled
   privateVulnerabilityReporting: enabled
   repositoryWikis: disabled
-  twoFactorRequirement: pending-github-settings-ui
+  twoFactorRequirement: enabled-and-verified

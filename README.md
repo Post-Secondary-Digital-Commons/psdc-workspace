@@ -16,6 +16,7 @@ psdc/
 │   ├── psdc-compute/
 │   ├── psdc-media/
 │   ├── psdc-social/
+│   ├── psdc-web/
 │   ├── psdc-desktop/
 │   ├── psdc-mobile/
 │   └── psdc-deployment-template/
@@ -27,6 +28,7 @@ psdc/
         ├── algonquin-compute/
         ├── algonquin-media/
         ├── algonquin-social/
+        ├── algonquin-web/
         ├── algonquin-desktop/
         ├── algonquin-mobile/
         └── algonquin-deployment/
@@ -50,7 +52,7 @@ common repository as `upstream`.
 
 ## GitHub governance baseline
 
-All 19 product and workspace repositories protect `main`: changes require a pull
+All 21 product and workspace repositories protect `main`: changes require a pull
 request, unresolved review conversations block merging, administrators are
 covered, and force-pushes and branch deletion are disabled. Shared repositories
 also require linear history. Institution forks permit merge commits because a
@@ -68,8 +70,27 @@ and only `RedjiJB` may update protected `main`. The `Club Members` team has
 triage access and the `Maintainers` team has maintain access; neither team can
 update protected `main` until explicitly promoted by the governance process.
 Secret scanning, push protection, Dependabot security alerts and fixes, private
-vulnerability reporting, web commit signoff, and repository-wiki disabling are
-active across all 19 repositories.
+vulnerability reporting, web commit signoff, repository-wiki disabling, and
+organization-wide 2FA are active across all 21 repositories.
+
+GitHub Copilot is optional and is never a merge requirement. Interactive AI
+development defaults to an open local client/model path, and deterministic review
+will use self-hosted Woodpecker pipelines when implementation begins.
+
+## Documentation quality gate
+
+Architecture and scope are considered complete only when the common specification
+standard is satisfied and the workspace audit finds no broken local Markdown or
+Obsidian links, invalid JSON, or unresolved specification markers. Run the
+repeatable local check from the workspace root:
+
+```powershell
+./scripts/Test-Documentation.ps1
+```
+
+The separate YAML parse check is part of the future Woodpecker documentation
+pipeline. It validates `repos.yaml`, the OpenAPI profile, and institution
+deployment manifests with an open-source YAML parser.
 
 ## Licensing
 

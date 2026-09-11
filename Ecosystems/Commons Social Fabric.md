@@ -2,7 +2,7 @@
 tags: [ecosystem, fediverse, activitypub]
 ---
 
-# AC Fediverse
+# Commons Social Fabric
 
 Canonical repository: [[common/psdc-social/README|psdc-social]].
 
@@ -14,7 +14,7 @@ moderation, abuse response and the public ActivityPub boundary.
 ## Dependencies
 
 - Hard: Cloud identity/policy/data/object primitives for local operation.
-- Optional: Media Fabric for advanced assets, AI for enrichment/moderation, ACF
+- Optional: Media Fabric for advanced assets, AI for enrichment/moderation, Commons Compute
   for background capacity.
 - Rule: text social operation has deterministic fallbacks when optional systems
   are unavailable.

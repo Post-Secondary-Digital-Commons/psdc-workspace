@@ -24,7 +24,7 @@ tags: [moc, commons, federation, architecture]
 ## Delivery and economics
 
 - [[common/psdc-architecture/docs/economics/Post-Secondary-Digital-Commons-Funding-Model]]
-- [[common/psdc-architecture/docs/roadmap/Ecosystem-Gap-Analysis-2026-09-10]]
+- [[common/psdc-architecture/docs/roadmap/Ecosystem-Implementation-Readiness-2026-09-11]]
 - [[common/psdc-architecture/docs/governance/Human-Choices-and-Decisions-Register]]
 
 ## Deployment logic

@@ -2,7 +2,7 @@
 tags: [ecosystem, media, spatial]
 ---
 
-# AC Media Fabric
+# Commons Media and Spatial Fabric
 
 Canonical repository: [[common/psdc-media/README|psdc-media]].
 
@@ -15,7 +15,7 @@ Media identity, manifests, provenance, rights, moderation, processing, spatial a
 
 - Hard: Cloud identity/policy, PostgreSQL metadata, Ceph object storage and one
   local open-source processing runtime.
-- Optional: ACF capacity, AI enrichment and Fediverse publication.
+- Optional: Commons Compute capacity, AI enrichment and Social Fabric publication.
 - Rule: assets remain usable and governed without federation.
 
 ## Links
