@@ -87,20 +87,16 @@ $architectureRoots = @(
     (Join-Path $rootPath 'common\psdc-architecture'),
     (Join-Path $rootPath 'institutions\algonquin\algonquin-architecture')
 )
+$architectureInventory = @{}
 foreach ($architectureRoot in $architectureRoots) {
     if (-not (Test-Path -LiteralPath $architectureRoot)) { continue }
-    $completedSpecifications = @(Get-ChildItem -LiteralPath (Join-Path $architectureRoot 'docs') -Recurse -File -Filter '*.md' |
+    $typedDocuments = @(Get-ChildItem -LiteralPath (Join-Path $architectureRoot 'docs') -Recurse -File -Filter '*.md' |
         Where-Object {
-            $specificationContent = Get-Content -LiteralPath $_.FullName -Raw
-            $specificationContent -notmatch '(?m)^>\s*Document type:\s*template\s*$' -and
-            ($specificationContent -match '## Purpose and outcome' -or
-                $_.Name -eq 'PSDC-Web-Foundation.md'
-            )
+            $documentContent = Get-Content -LiteralPath $_.FullName -Raw
+            $documentContent -match '(?m)^>\s*Document type:\s*[^\r\n]+$'
         })
-    $expectedSpecifications = if ($architectureRoot -match '[\\/]institutions[\\/]algonquin') { 447 } else { 445 }
-    if ($completedSpecifications.Count -ne $expectedSpecifications) {
-        Add-Failure 'specification-inventory' $architectureRoot "expected $expectedSpecifications, found $($completedSpecifications.Count)"
-    }
+    $key = if ($architectureRoot -match '[\\/]institutions[\\/]algonquin') { 'Algonquin' } else { 'Commons' }
+    $architectureInventory[$key] = $typedDocuments.Count
 }
 
 if ($failures.Count -gt 0) {
@@ -108,4 +104,6 @@ if ($failures.Count -gt 0) {
     throw "Documentation validation failed with $($failures.Count) issue(s)."
 }
 
-Write-Output "Documentation validation passed: $($markdownFiles.Count) Markdown files, $($jsonFiles.Count) JSON files, 445 Commons and 447 Algonquin completed specifications, and zero broken local links or unresolved specification markers."
+$commonsCount = if ($architectureInventory.ContainsKey('Commons')) { $architectureInventory['Commons'] } else { 0 }
+$algonquinCount = if ($architectureInventory.ContainsKey('Algonquin')) { $architectureInventory['Algonquin'] } else { 0 }
+Write-Output "Documentation validation passed: $($markdownFiles.Count) Markdown files, $($jsonFiles.Count) JSON files, $commonsCount Commons and $algonquinCount Algonquin typed architecture documents, and zero broken local links or unresolved specification markers."

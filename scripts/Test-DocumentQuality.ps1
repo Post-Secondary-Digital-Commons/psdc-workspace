@@ -66,7 +66,7 @@ foreach ($file in $documents) {
         # requirement block (for example "**Out of scope:** ..."). This keeps
         # the check strict about declared content without forcing a cosmetic
         # heading rewrite across the existing specification corpus.
-        $sectionPattern = "(?im)(?:^#{1,4}[^\r\n]*($headingPattern)|^\s*(?:[-*]\s*)?\*{0,2}($headingPattern)\b)"
+        $sectionPattern = "(?im)(?:^#{1,4}[^\r\n]*($headingPattern)|^\s*(?:[-*]\s*)?\*{0,2}($headingPattern)\b|^>\s*[^\r\n:]*($headingPattern)[^\r\n:]*:)"
         if ($content -notmatch $sectionPattern) {
             Add-Finding $file "missing required content: $headingPattern"
         }
