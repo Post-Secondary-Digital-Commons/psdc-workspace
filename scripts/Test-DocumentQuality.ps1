@@ -10,7 +10,7 @@ $rootPath = (Resolve-Path -LiteralPath $Root).Path
 $ignoredNames = @('CONTRIBUTING.md')
 $ignoredPatterns = @('LICENSE', 'NOTICE')
 $documents = @(Get-ChildItem -LiteralPath $rootPath -Recurse -File -Filter '*.md' |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' -and $_.Name -notin $ignoredNames })
+    Where-Object { $_.FullName -notmatch '[\\/](?:\.git|node_modules|\.venv|dist|build)[\\/]' -and $_.Name -notin $ignoredNames })
 $findings = [System.Collections.Generic.List[object]]::new()
 
 $required = @{

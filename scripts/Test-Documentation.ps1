@@ -7,7 +7,7 @@ $ErrorActionPreference = 'Stop'
 $rootPath = (Resolve-Path -LiteralPath $Root).Path
 $failures = [System.Collections.Generic.List[string]]::new()
 $markdownFiles = @(Get-ChildItem -LiteralPath $rootPath -Recurse -File -Filter '*.md' |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
+    Where-Object { $_.FullName -notmatch '[\\/](?:\.git|node_modules|\.venv|dist|build)[\\/]' })
 
 function Add-Failure([string]$Kind, [string]$Source, [string]$Target) {
     $relative = [IO.Path]::GetRelativePath($rootPath, $Source)
@@ -69,9 +69,9 @@ foreach ($file in $markdownFiles) {
 }
 
 $jsonFiles = @(Get-ChildItem -LiteralPath $rootPath -Recurse -File -Filter '*.json' |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
+    Where-Object { $_.FullName -notmatch '[\\/](?:\.git|node_modules|\.venv|dist|build)[\\/]' })
 foreach ($file in $jsonFiles) {
-    try { Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -Depth 100 | Out-Null }
+    try { Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -AsHashtable -Depth 100 | Out-Null }
     catch { Add-Failure 'invalid-json' $file.FullName $_.Exception.Message }
 }
 

@@ -87,7 +87,7 @@ function Add-Finding(
 
 $documents = @(Get-ChildItem -LiteralPath $rootPath -Recurse -File -Filter '*.md' |
     Where-Object {
-        $_.FullName -notmatch '[\\/]\.git[\\/]' -and
+        $_.FullName -notmatch '[\\/](?:\.git|node_modules|\.venv|dist|build)[\\/]' -and
         $_.Name -notin $ignoredNames
     })
 
@@ -102,7 +102,7 @@ $records = foreach ($file in $documents) {
         Status = Get-Metadata $content 'Status'
         IsCurrentAuthority = (
             (Get-Metadata $content 'Document type').ToLowerInvariant() -notin @('historical-record', 'template') -and
-            (Get-Metadata $content 'Status') -notmatch '(?i)historical|superseded|template'
+            (Get-Metadata $content 'Status') -notmatch '(?i)historical|superseded|template|^stub\b'
         )
         Repository = Get-RepositoryRoot $file.FullName
         Normalized = Normalize-Document $content $title $file.BaseName
@@ -214,6 +214,8 @@ foreach ($record in $records) {
 
 $ordered = @($findings | Sort-Object Repository, File, FindingType, Cluster)
 Write-Output "Semantic documentation audit: $($documents.Count) Markdown documents, $($ordered.Count) finding(s)."
+$stubCount = @($records | Where-Object { $_.Status -match '(?i)^stub\b' }).Count
+Write-Output "  $stubCount declared stub document(s) excluded from authority checks (tracked debt: not yet specified)."
 $ordered | Group-Object FindingType | Sort-Object Count -Descending |
     ForEach-Object { Write-Output "  $($_.Count)x $($_.Name)" }
 
