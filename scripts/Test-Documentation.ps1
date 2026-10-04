@@ -93,7 +93,7 @@ foreach ($architectureRoot in $architectureRoots) {
     $typedDocuments = @(Get-ChildItem -LiteralPath (Join-Path $architectureRoot 'docs') -Recurse -File -Filter '*.md' |
         Where-Object {
             $documentContent = Get-Content -LiteralPath $_.FullName -Raw
-            $documentContent -match '(?m)^>\s*Document type:\s*[^\r\n]+$'
+            $documentContent -match '(?m)^>\s*Document type:\s*[^\r\n]+\r?$'
         })
     $key = if ($architectureRoot -match '[\\/]institutions[\\/]algonquin') { 'Algonquin' } else { 'Commons' }
     $architectureInventory[$key] = $typedDocuments.Count
