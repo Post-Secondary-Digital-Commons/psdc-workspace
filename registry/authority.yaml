@@ -1,0 +1,16 @@
+schemaVersion: 1
+precedence:
+  - id: decision-register
+    governs: [accepted-defaults, human-decisions, supersession]
+  - id: adr
+    governs: [architecture-decisions, consequences]
+  - id: contracts
+    governs: [schemas, apis, events, state-machines, registries]
+  - id: repository-documents
+    governs: [subsystem-elaboration]
+  - id: institution-overlay
+    governs: [local-policy, branding, topology, deployment]
+  - id: generated-view
+    governs: [navigation, explanation]
+conflictPolicy: report-and-apply-higher-authority-unless-formally-superseded
+

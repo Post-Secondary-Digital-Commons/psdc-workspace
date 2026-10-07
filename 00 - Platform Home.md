@@ -14,6 +14,7 @@ these maps provide Obsidian navigation and cross-links.
 
 ## Start here
 
+- [[Maps/Generated/Workspace Command Center|Workspace command center]]
 - [[Maps/00 - Ecosystem Map|Ecosystem map]]
 - [[Maps/01 - Dependency Map|Dependency map]]
 - [[Maps/02 - Cross-Pollination Map|Cross-pollination map]]
@@ -21,6 +22,10 @@ these maps provide Obsidian navigation and cross-links.
 - [[Maps/04 - Open Source Stack|Open-source stack]]
 - [[Maps/05 - Architecture and Contracts|Architecture and contracts]]
 - [[Maps/06 - Post-Secondary Commons|Post-Secondary Digital Commons]]
+
+The command center is generated from repository, authority, and evidence
+registries. It is a navigation surface and never supersedes the Decision
+Register, an ADR, or a contract.
 
 ## Ecosystems
 
