@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T22:52:27.762260+00:00",
+  "generatedAt": "2026-10-07T23:33:13.572297+00:00",
   "online": true,
   "workspaceRoot": "workspace-command-center",
   "checkoutRoot": "psdc",
@@ -286,19 +286,13 @@
       "owner": "Post-Secondary-Digital-Commons",
       "path": "common/psdc-agent-skills",
       "exists": true,
-      "revision": "984e54b2612bb8b5969b83d17eee831f5d5badcb",
-      "shortRevision": "984e54b2",
-      "branch": "codex/governed-skill-pack-20261007",
+      "revision": "687563886d4d4d58d3c810775789004e4e1785dd",
+      "shortRevision": "68756388",
+      "branch": "codex/consumer-validator-remote-identity-20261007",
       "dirty": false,
       "tag": null,
-      "openPullRequests": [
-        {
-          "number": 1,
-          "title": "Add governed PSDC agent skill pack",
-          "url": "https://github.com/Post-Secondary-Digital-Commons/psdc-agent-skills/pull/1"
-        }
-      ],
-      "markdownFiles": 27,
+      "openPullRequests": [],
+      "markdownFiles": 29,
       "stubs": 0,
       "declaredEvidence": {
         "documentation": "present",

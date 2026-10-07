@@ -51,6 +51,15 @@ It must not create duplicate identity, policy, contract, or storage authorities.
 dependencies, interfaces, institution overlays, and declared evidence posture.
 The shape is validated by `schemas/repos.schema.json`.
 
+The `required` list records a governed production foundation or specification
+authority, while `optional` records a capability that can be absent or degraded
+without breaking the repository's core path. A repository may still have a
+smaller local test harness. The accepted
+`psdc-architecture/docs/architecture/Ecosystem-Dependency-Contract.md` owns
+the precise runtime class, contract, and failure behavior; the catalog is its
+navigation projection. Required dependencies must resolve and cannot form a
+cycle. Optional edges do not grant synchronous startup authority.
+
 Its relationship model deliberately resembles the open-source Backstage catalog:
 human-maintained YAML entities, stable names, lifecycle, ownership, dependencies,
 and APIs. This keeps future conversion feasible without requiring a Backstage
