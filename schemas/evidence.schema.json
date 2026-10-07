@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.psdc.example/workspace/evidence.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "evidence"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claimId", "claim", "scope", "state", "artifact", "artifactDigest", "revision", "producer", "verification", "observedAt", "expiresAt", "limitations"],
+        "properties": {
+          "claimId": { "type": "string" },
+          "claim": { "type": "string" },
+          "scope": { "type": "string" },
+          "state": { "enum": ["proposed", "documented", "contracted", "structurally_validated", "implemented", "deployed", "production_proven"] },
+          "artifact": { "type": "string" },
+          "artifactDigest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+          "revision": { "type": "string" },
+          "producer": { "type": "string" },
+          "verification": { "type": "string" },
+          "observedAt": { "type": "string", "format": "date-time" },
+          "expiresAt": { "type": ["string", "null"], "format": "date-time" },
+          "limitations": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -19,7 +19,8 @@ psdc/
 │   ├── psdc-web/
 │   ├── psdc-desktop/
 │   ├── psdc-mobile/
-│   └── psdc-deployment-template/
+│   ├── psdc-deployment-template/
+│   └── psdc-agent-skills/
 └── institutions/
     └── algonquin/                  Algonquin GitHub organization forks
         ├── algonquin-architecture/
@@ -31,7 +32,8 @@ psdc/
         ├── algonquin-web/
         ├── algonquin-desktop/
         ├── algonquin-mobile/
-        └── algonquin-deployment/
+        ├── algonquin-deployment/
+        └── algonquin-agent-skills/   planned thin overlay
 ```
 
 GitHub forks repositories, not organizations. Each Algonquin repository therefore
@@ -49,6 +51,30 @@ published under `Post-Secondary-Digital-Commons`; Algonquin's thin forks are
 published under `Algonquin-Digital-Commons`. Every local repository has its
 hosted `origin`, and each institution fork tracks the corresponding hosted
 common repository as `upstream`.
+
+## Workspace command center
+
+`repos.yaml` schema version 3 is also the ecosystem catalog: it records bounded
+roles, dependencies, provided and consumed interfaces, institution overlays,
+and declared evidence posture. `registry/evidence.yaml` records bounded claims;
+it does not let file presence promote a repository to implemented or deployed.
+
+Generate the Obsidian views and a JSON status snapshot from the workspace root:
+
+```powershell
+python scripts/Build-WorkspaceCommandCenter.py `
+  --checkout-root C:\Users\jredj\dev\psdc `
+  --online
+```
+
+Omit `--online` for a deterministic local-only run. Online mode asks GitHub for
+open pull requests; every online result is a point-in-time observation.
+
+The design and staged open-source adoption plan are in
+`docs/command-center/Workspace-Command-Center-Specification.md`.
+The schema-2-to-schema-3 preservation record is in
+`docs/command-center/Catalog-Migration-v2-to-v3.md`, and the bounded local-model
+review workflow is in `docs/command-center/Local-Model-Assessment-Workflow.md`.
 
 ## GitHub governance baseline
 

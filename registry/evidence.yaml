@@ -1,0 +1,30 @@
+schemaVersion: 1
+evidence:
+  - claimId: workspace.catalog.v3
+    claim: The workspace repository catalog declares common repositories, institution overlays, dependencies, interfaces, lifecycle, and evidence posture.
+    scope: common-and-algonquin
+    state: documented
+    artifact: repos.yaml
+    artifactDigest: sha256:8fee32ddd9527c52b4d358f26edd468a5c31b9d1026eb8409064912851e522bd
+    revision: cc1b7af4a8624c383ccbb85f4eac79ad5794ed76
+    producer: Codex
+    verification: Validate against schemas/repos.schema.json and render the command center.
+    observedAt: "2026-10-07T18:50:18-04:00"
+    expiresAt: null
+    limitations:
+      - Declared dependencies and interfaces require owner review.
+      - The catalog does not prove any runtime service exists.
+  - claimId: workspace.command-center.generator.v1
+    claim: The workspace can generate repository, dependency, authority, evidence, and contract-explorer views from machine-readable sources.
+    scope: common-and-algonquin
+    state: structurally_validated
+    artifact: scripts/Build-WorkspaceCommandCenter.py
+    artifactDigest: sha256:01675c4e28d9a2723734d004f02e50e4b56cfe9564cb0436b2197f8362103f64
+    revision: cc1b7af4a8624c383ccbb85f4eac79ad5794ed76
+    producer: Codex
+    verification: Run scripts/Test-WorkspaceCommandCenter.ps1.
+    observedAt: "2026-10-07T18:50:18-04:00"
+    expiresAt: null
+    limitations:
+      - Structural generation does not verify the semantic correctness of catalog declarations.
+      - GitHub status is a point-in-time observation and may become stale.

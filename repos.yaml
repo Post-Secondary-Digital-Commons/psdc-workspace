@@ -1,4 +1,4 @@
-schemaVersion: 2
+schemaVersion: 3
 workspace: psdc-workspace
 workspaceRemote: https://github.com/Post-Secondary-Digital-Commons/psdc-workspace
 repositoryPolicy: upstream-and-institution-forks
@@ -7,27 +7,166 @@ gitAuthorEmail: jean0319@algonquinlive.com
 githubOrganizations:
   common: Post-Secondary-Digital-Commons
   algonquin: Algonquin-Digital-Commons
+externalInterfaces:
+  - id: identity.verify.v1
+    boundary: institution_identity_adapter
+  - id: network.reserve.v1
+    boundary: institution_network_adapter
 repositories:
-  - common: { name: psdc-architecture, path: common/psdc-architecture, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-architecture }
-    algonquin: { name: algonquin-architecture, path: institutions/algonquin/algonquin-architecture, remote: https://github.com/Algonquin-Digital-Commons/algonquin-architecture }
-  - common: { name: psdc-cloud, path: common/psdc-cloud, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-cloud }
-    algonquin: { name: algonquin-cloud, path: institutions/algonquin/algonquin-cloud, remote: https://github.com/Algonquin-Digital-Commons/algonquin-cloud }
-  - common: { name: psdc-ai, path: common/psdc-ai, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-ai }
-    algonquin: { name: algonquin-ai, path: institutions/algonquin/algonquin-ai, remote: https://github.com/Algonquin-Digital-Commons/algonquin-ai }
-  - common: { name: psdc-compute, path: common/psdc-compute, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-compute }
-    algonquin: { name: algonquin-compute, path: institutions/algonquin/algonquin-compute, remote: https://github.com/Algonquin-Digital-Commons/algonquin-compute }
-  - common: { name: psdc-media, path: common/psdc-media, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-media }
-    algonquin: { name: algonquin-media, path: institutions/algonquin/algonquin-media, remote: https://github.com/Algonquin-Digital-Commons/algonquin-media }
-  - common: { name: psdc-social, path: common/psdc-social, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-social }
-    algonquin: { name: algonquin-social, path: institutions/algonquin/algonquin-social, remote: https://github.com/Algonquin-Digital-Commons/algonquin-social }
-  - common: { name: psdc-web, path: common/psdc-web, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-web }
-    algonquin: { name: algonquin-web, path: institutions/algonquin/algonquin-web, remote: https://github.com/Algonquin-Digital-Commons/algonquin-web }
-  - common: { name: psdc-desktop, path: common/psdc-desktop, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-desktop }
-    algonquin: { name: algonquin-desktop, path: institutions/algonquin/algonquin-desktop, remote: https://github.com/Algonquin-Digital-Commons/algonquin-desktop }
-  - common: { name: psdc-mobile, path: common/psdc-mobile, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-mobile }
-    algonquin: { name: algonquin-mobile, path: institutions/algonquin/algonquin-mobile, remote: https://github.com/Algonquin-Digital-Commons/algonquin-mobile }
-  - common: { name: psdc-deployment-template, path: common/psdc-deployment-template, remote: https://github.com/Post-Secondary-Digital-Commons/psdc-deployment-template }
-    algonquin: { name: algonquin-deployment, path: institutions/algonquin/algonquin-deployment, remote: https://github.com/Algonquin-Digital-Commons/algonquin-deployment }
+  - repository:
+      id: psdc-architecture
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-architecture
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-architecture
+      role: normative_architecture_and_contracts
+      authority: common
+      lifecycle: specification
+      upstream: null
+    dependencies: { required: [], optional: [] }
+    interfaces: { provides: [decision.register.v1, contract.catalog.v1], consumes: [] }
+    institutionOverlays:
+      - { id: algonquin-architecture, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-architecture, remote: https://github.com/Algonquin-Digital-Commons/algonquin-architecture }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-cloud
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-cloud
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-cloud
+      role: institutional_cloud_control_plane
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-compute], optional: [psdc-ai, psdc-media] }
+    interfaces: { provides: [cloud.resource.v1, cloud.service.v1], consumes: [identity.verify.v1, workload.submit.v1] }
+    institutionOverlays:
+      - { id: algonquin-cloud, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-cloud, remote: https://github.com/Algonquin-Digital-Commons/algonquin-cloud }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-ai
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-ai
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-ai
+      role: institutional_ai_control_plane
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-cloud, psdc-compute], optional: [psdc-media] }
+    interfaces: { provides: [ai.session.v1, ai.route.v1], consumes: [identity.verify.v1, workload.submit.v1, object.retrieve.v1] }
+    institutionOverlays:
+      - { id: algonquin-ai, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-ai, remote: https://github.com/Algonquin-Digital-Commons/algonquin-ai }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-compute
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-compute
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-compute
+      role: sovereign_compute_and_storage_fabric
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture], optional: [psdc-cloud] }
+    interfaces: { provides: [workload.submit.v1, lease.manage.v1, object.retrieve.v1], consumes: [identity.verify.v1, network.reserve.v1] }
+    institutionOverlays:
+      - { id: algonquin-compute, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-compute, remote: https://github.com/Algonquin-Digital-Commons/algonquin-compute }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-media
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-media
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-media
+      role: media_and_spatial_fabric
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-cloud, psdc-compute], optional: [psdc-ai] }
+    interfaces: { provides: [media.asset.v1, spatial.scene.v1], consumes: [identity.verify.v1, workload.submit.v1, object.retrieve.v1] }
+    institutionOverlays:
+      - { id: algonquin-media, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-media, remote: https://github.com/Algonquin-Digital-Commons/algonquin-media }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-social
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-social
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-social
+      role: federated_social_fabric
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-cloud], optional: [psdc-media] }
+    interfaces: { provides: [activitypub.actor.v1, social.policy.v1], consumes: [identity.verify.v1, media.asset.v1] }
+    institutionOverlays:
+      - { id: algonquin-social, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-social, remote: https://github.com/Algonquin-Digital-Commons/algonquin-social }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-web
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-web
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-web
+      role: browser_client
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-cloud, psdc-ai], optional: [psdc-media, psdc-social] }
+    interfaces: { provides: [client.web.v1], consumes: [ai.session.v1, cloud.service.v1, activitypub.actor.v1] }
+    institutionOverlays:
+      - { id: algonquin-web, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-web, remote: https://github.com/Algonquin-Digital-Commons/algonquin-web }
+    evidence: { documentation: present, contracts: absent, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-desktop
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-desktop
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-desktop
+      role: desktop_client
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-ai], optional: [psdc-cloud] }
+    interfaces: { provides: [client.desktop.v1], consumes: [ai.session.v1, cloud.service.v1] }
+    institutionOverlays:
+      - { id: algonquin-desktop, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-desktop, remote: https://github.com/Algonquin-Digital-Commons/algonquin-desktop }
+    evidence: { documentation: present, contracts: absent, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-mobile
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-mobile
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-mobile
+      role: mobile_client
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-ai], optional: [psdc-cloud, psdc-social] }
+    interfaces: { provides: [client.mobile.v1], consumes: [ai.session.v1, cloud.service.v1, activitypub.actor.v1] }
+    institutionOverlays:
+      - { id: algonquin-mobile, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-mobile, remote: https://github.com/Algonquin-Digital-Commons/algonquin-mobile }
+    evidence: { documentation: present, contracts: absent, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-deployment-template
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-deployment-template
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-deployment-template
+      role: institution_deployment_overlay_template
+      authority: common
+      lifecycle: specification
+      upstream: psdc-architecture
+    dependencies: { required: [psdc-architecture, psdc-cloud, psdc-compute], optional: [psdc-ai, psdc-media, psdc-social] }
+    interfaces: { provides: [deployment.manifest.v1, policy.binding.v1], consumes: [contract.catalog.v1] }
+    institutionOverlays:
+      - { id: algonquin-deployment, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-deployment, remote: https://github.com/Algonquin-Digital-Commons/algonquin-deployment }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
+  - repository:
+      id: psdc-agent-skills
+      owner: Post-Secondary-Digital-Commons
+      path: common/psdc-agent-skills
+      remote: https://github.com/Post-Secondary-Digital-Commons/psdc-agent-skills
+      role: governed_agent_skills_and_assessment
+      authority: common
+      lifecycle: specification
+      upstream: null
+    dependencies: { required: [psdc-architecture], optional: [] }
+    interfaces: { provides: [assessment.result.v1, skill.registry.v1], consumes: [decision.register.v1, contract.catalog.v1] }
+    institutionOverlays:
+      - { id: algonquin-agent-skills, owner: Algonquin-Digital-Commons, path: institutions/algonquin/algonquin-agent-skills, remote: https://github.com/Algonquin-Digital-Commons/algonquin-agent-skills, status: planned }
+    evidence: { documentation: present, contracts: partial, implementation: absent, deployment: absent }
 
 defaults:
   branch: main
