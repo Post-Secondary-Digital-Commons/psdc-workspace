@@ -63,13 +63,13 @@ references to that registry.
 
 ### 3. High — evidence records are not yet immutable attestations
 
-**Basis:** The initial records identify `working-tree` revisions and do not carry
-artifact digests or signatures.  
+**Basis:** The initial records used `working-tree`. This review remediated the
+immediate reproducibility defect with immutable commit IDs and artifact SHA-256
+digests; cryptographic signatures are still absent.
 **Failure scenario:** A later edit changes the artifact while an old evidence
 claim appears to describe it.  
-**Smallest remediation:** After the implementation commit exists, record its
-commit and artifact SHA-256 values in a follow-up evidence commit. Later replace
-manual YAML with signed in-toto-compatible attestations.
+**Smallest remediation:** Later replace manual YAML with signed
+in-toto-compatible attestations and verify them in the generator.
 
 ### 4. Medium — the catalog schema validates shape more strongly than meaning
 

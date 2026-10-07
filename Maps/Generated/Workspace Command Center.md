@@ -1,7 +1,7 @@
 ---
 tags: [generated, command-center, evidence]
 generated: true
-generatedAt: 2026-10-07T22:49:54.430147+00:00
+generatedAt: 2026-10-07T22:52:27.762260+00:00
 ---
 
 # Workspace Command Center

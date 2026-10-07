@@ -244,8 +244,8 @@ def render_authority(authority: dict) -> str:
 def render_evidence(evidence: dict) -> str:
     rows = []
     for record in evidence["evidence"]:
-        rows.append([record["claimId"], record["scope"], record["state"], record["artifact"], record["revision"], record["verification"]])
-    return "# Evidence and Readiness Registry\n\n> Generated from `registry/evidence.yaml`. Evidence states are ordered: " + " -> ".join(EVIDENCE_ORDER) + ".\n\n" + md_table(["Claim", "Scope", "State", "Artifact", "Revision", "Verification"], rows) + "\n"
+        rows.append([record["claimId"], record["scope"], record["state"], record["artifact"], record["artifactDigest"], record["revision"], record["verification"]])
+    return "# Evidence and Readiness Registry\n\n> Generated from `registry/evidence.yaml`. Evidence states are ordered: " + " -> ".join(EVIDENCE_ORDER) + ".\n\n" + md_table(["Claim", "Scope", "State", "Artifact", "SHA-256", "Revision", "Verification"], rows) + "\n"
 
 
 def render_contract_explorer(checkout_root: Path) -> str:
