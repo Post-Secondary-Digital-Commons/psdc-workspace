@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-07T23:33:55.931417+00:00",
+  "source": "local origin/main remote-tracking refs; fetch before regeneration",
+  "auditorSchemaRevision": "3582af0785e9800bcdd796a767bddb1f37eee4ca",
+  "rows": [
+    {
+      "id": "psdc-architecture",
+      "authority": "common",
+      "path": "common/psdc-architecture",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-architecture",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "6405e9bc138cb820162984c96d0439d82c88e54d",
+      "manifestBlob": "f0509d806a81dc7cc054eaadeaf1eb31556d23e6",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "grill-with-docs",
+        "to-spec",
+        "wayfinder",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-architecture",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-architecture",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-architecture",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "907ddf3b56467aa9e982702b68d2135d0ab69655",
+      "manifestBlob": "b67035591a62629dd9c290773de8e1922a917254",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-cloud",
+      "authority": "common",
+      "path": "common/psdc-cloud",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-cloud",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "600240827e0cef0a69a3a480f50b8750955a1ace",
+      "manifestBlob": "a3260fab041525098f42485f71290f80f6eed961",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-cloud",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-cloud",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-cloud",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "05f728a3f78cacc59d2367aa812d762cf9e69a1e",
+      "manifestBlob": "4a99ba7687c6be70c6eeecd1d856bc71d1bc3bcb",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-ai",
+      "authority": "common",
+      "path": "common/psdc-ai",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-ai",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "fea3454ee1114635a21f9f9085cf94085aabcfdc",
+      "manifestBlob": "7415194890b0b72bee722b49e9494b80a11b9968",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-ai",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-ai",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-ai",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "07219f498a40014941eed29b05c6437e05735f8e",
+      "manifestBlob": "9a50dea53ecc795bf1a5fde1d4cfdfbab254293d",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-compute",
+      "authority": "common",
+      "path": "common/psdc-compute",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-compute",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "9ed1e812f63ece7efb0bc6dc82b3b7a1b26bc8de",
+      "manifestBlob": "ed13194ff4e8e751d721b2cee39cd901f382790f",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-compute",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-compute",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-compute",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "b2a02e10c0b3b87370a168eac0f1a138e7210779",
+      "manifestBlob": "035db7d1a423f26acec44e9391dccda23999531b",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-media",
+      "authority": "common",
+      "path": "common/psdc-media",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-media",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "a0667a857858d8ef669972bd050c25ee4232f8cb",
+      "manifestBlob": "a6f69f5d67b59978f8847388a7ae9fc84cb8a1a4",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-media",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-media",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-media",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "5193327a14269e58e367bdbe21813b080ef1c8ae",
+      "manifestBlob": "8bd0183189e80ec2da59b1654c2ef82ede40c88b",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-social",
+      "authority": "common",
+      "path": "common/psdc-social",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-social",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "b7bb37352f99c646a160af6f82e1c30cfcdb9d1a",
+      "manifestBlob": "c26ea3d582fd488c337e1099ed0ccf82500a64a4",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-social",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-social",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-social",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "03d7bb29eb128f15af475b5ee69bcfd0a028c47e",
+      "manifestBlob": "2092ee8aaba098b6e7c4b06fc9199798712c7ed2",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-web",
+      "authority": "common",
+      "path": "common/psdc-web",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-web",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "064cfe07a051ee2c5243a09ba22ecc6720e05e57",
+      "manifestBlob": "1723741afb0bc97077ebfa271aaec8b25ab32c5b",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-web",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-web",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-web",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "bb8d7469aa775a34815d7f8cea39fd5c5176dea6",
+      "manifestBlob": "480e6bca6d3a82720982c0d346d7c35422cfce1c",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-desktop",
+      "authority": "common",
+      "path": "common/psdc-desktop",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-desktop",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "9798d259fafabe35bfe66682068040d2b31e48e3",
+      "manifestBlob": "9f1d2a812fdae9bc437b143d901acdfc84256128",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-desktop",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-desktop",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-desktop",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "f0c1dd3a035d109f229e83fa247491822c532130",
+      "manifestBlob": "545fae55e528faa48465e7b5d8c4238bb7aa5ff4",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-mobile",
+      "authority": "common",
+      "path": "common/psdc-mobile",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-mobile",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "58dc054af89a40bb0218fb9da47ee39841518a08",
+      "manifestBlob": "f59fd6dca9830874419fdea952c8dbad78f809d3",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-mobile",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-mobile",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-mobile",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "6f024b2d2032ebab4f52115f11c9fce418d5c90b",
+      "manifestBlob": "52b3db3d3970651e12083f04740f0b84bd66ba2a",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-deployment-template",
+      "authority": "common",
+      "path": "common/psdc-deployment-template",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-deployment-template",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "6e1f52a2f4cf768518b94aca4b5105f5197fae3b",
+      "manifestBlob": "5d0fb104479626d17af0a6e55eb082d61cbc60e3",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "to-spec",
+        "research",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-deployment",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-deployment",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-deployment",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "1e2e6f25507fd4f43a1c8692467e209fb239d2a8",
+      "manifestBlob": "bfa2414199d9dbf0ee6f6527104d03a286afe270",
+      "skillPackRevision": "dc7baf75ecadb389b190df4e438008ca9fe0f9f1",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "to-spec",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "psdc-agent-skills",
+      "authority": "common",
+      "path": "common/psdc-agent-skills",
+      "remote": "https://github.com/Post-Secondary-Digital-Commons/psdc-agent-skills",
+      "declaredStatus": "active",
+      "state": "validated",
+      "revision": "3582af0785e9800bcdd796a767bddb1f37eee4ca",
+      "manifestBlob": "efbeb3979a49e4af9eb26e7530410e20aa8a29ba",
+      "skillPackRevision": "45386cb2f1ccdd61a42100462325c1c3006f7f8a",
+      "enabledSkills": [
+        "psdc-project-assessment",
+        "psdc-evidence-audit",
+        "domain-modeling",
+        "writing-for-agents"
+      ],
+      "findings": []
+    },
+    {
+      "id": "algonquin-agent-skills",
+      "authority": "institution",
+      "path": "institutions/algonquin/algonquin-agent-skills",
+      "remote": "https://github.com/Algonquin-Digital-Commons/algonquin-agent-skills",
+      "declaredStatus": "planned",
+      "state": "planned",
+      "revision": null,
+      "manifestBlob": null,
+      "skillPackRevision": null,
+      "enabledSkills": [],
+      "findings": []
+    }
+  ]
+}

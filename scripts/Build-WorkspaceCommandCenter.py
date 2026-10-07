@@ -132,6 +132,26 @@ def validate_catalog_semantics(catalog: dict) -> None:
                 raise ValueError(f"{repository_id} consumes {interface}, which has no provider or external boundary.")
             if len(owners) > 1:
                 raise ValueError(f"{interface} has multiple common providers: {', '.join(owners)}.")
+    required = {
+        entry["repository"]["id"]: entry["dependencies"]["required"]
+        for entry in catalog["repositories"]
+    }
+    visiting: set[str] = set()
+    visited: set[str] = set()
+
+    def visit(repository_id: str) -> None:
+        if repository_id in visiting:
+            raise ValueError(f"Required dependency cycle reaches {repository_id}.")
+        if repository_id in visited:
+            return
+        visiting.add(repository_id)
+        for dependency in required[repository_id]:
+            visit(dependency)
+        visiting.remove(repository_id)
+        visited.add(repository_id)
+
+    for repository_id in required:
+        visit(repository_id)
 
 
 def md_table(headers: list[str], rows: list[list[str]]) -> str:
@@ -215,6 +235,7 @@ commit identifies only `HEAD`, and uncommitted content is not accepted evidence.
 - [[Maps/Generated/Authority Map]]
 - [[Maps/Generated/Evidence and Readiness Registry]]
 - [[Maps/Generated/Contract Explorer]]
+- [[Maps/Generated/Ecosystem Skill Adoption]]
 """
 
 

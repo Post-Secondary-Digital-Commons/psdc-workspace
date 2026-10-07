@@ -76,6 +76,17 @@ The schema-2-to-schema-3 preservation record is in
 `docs/command-center/Catalog-Migration-v2-to-v3.md`, and the bounded local-model
 review workflow is in `docs/command-center/Local-Model-Assessment-Workflow.md`.
 
+The ecosystem skill-adoption view is generated from local `origin/main` refs:
+
+```powershell
+python scripts/Build-Ecosystem-Skill-Adoption.py --checkout-root C:\Users\jredj\dev\psdc
+```
+
+Fetch each checkout before regenerating it. The generated view reports agent
+routing and source revisions; the separate
+`docs/skill-application/Ecosystem-Skill-Review-2026-10-07.md` records the
+source-checked architecture findings.
+
 ## GitHub governance baseline
 
 All 21 product and workspace repositories protect `main`: changes require a pull

@@ -1,7 +1,7 @@
 ---
 tags: [generated, command-center, evidence]
 generated: true
-generatedAt: 2026-10-07T22:52:27.762260+00:00
+generatedAt: 2026-10-07T23:33:13.572297+00:00
 ---
 
 # Workspace Command Center
@@ -18,10 +18,10 @@ generatedAt: 2026-10-07T22:52:27.762260+00:00
 
 - Common architecture baseline tag: **v0.1.0-draft**
 - Catalog entries: **11 common / 11 institution overlays**
-- Open pull requests observed: **3**
+- Open pull requests observed: **2**
 - Online observation errors: **0**; inspect `registry/generated-workspace-status.json` for bounded error details.
 - Missing expected checkouts: **0**
-- Markdown documents observed: **1694**
+- Markdown documents observed: **1696**
 - Documents explicitly marked as stubs: **271**
 - Broken-link count: **not assessed by this generator**; run `scripts/Test-Documentation.ps1` and ingest its report as evidence.
 - Semantic-clone count: **not asserted by this generator**; use the architecture semantic audit.
@@ -44,7 +44,7 @@ generatedAt: 2026-10-07T22:52:27.762260+00:00
 | psdc-desktop | common | present | specification | 5da00a49 | 0 | 3 | 0 | not-applicable | absent | absent |
 | psdc-mobile | common | present | specification | b817f360 | 0 | 4 | 0 | not-applicable | absent | absent |
 | psdc-deployment-template | common | present | specification | d898b025 | 0 | 8 | 0 | not-applicable | partial | absent |
-| psdc-agent-skills | common | present | specification | 984e54b2 | 1 | 27 | 0 | not-applicable | partial | absent |
+| psdc-agent-skills | common | present | specification | 68756388 | 0 | 29 | 0 | not-applicable | partial | absent |
 | algonquin-architecture | institution | present | institution-specific | aa41e593 dirty | 1 | 528 | 0 | behind 4, ahead 21 | overlay-specific | overlay-specific |
 | algonquin-cloud | institution | present | institution-specific | bfb0be7e | 0 | 12 | 0 | behind 0, ahead 8 | overlay-specific | overlay-specific |
 | algonquin-ai | institution | present | institution-specific | 9c76ff5d | 0 | 26 | 0 | behind 0, ahead 9 | overlay-specific | overlay-specific |
@@ -71,3 +71,4 @@ commit identifies only `HEAD`, and uncommitted content is not accepted evidence.
 - [[Maps/Generated/Authority Map]]
 - [[Maps/Generated/Evidence and Readiness Registry]]
 - [[Maps/Generated/Contract Explorer]]
+- [[Maps/Generated/Ecosystem Skill Adoption]]

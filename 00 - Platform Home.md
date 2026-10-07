@@ -15,6 +15,7 @@ these maps provide Obsidian navigation and cross-links.
 ## Start here
 
 - [[Maps/Generated/Workspace Command Center|Workspace command center]]
+- [[Maps/Generated/Ecosystem Skill Adoption|Ecosystem skill adoption]]
 - [[Maps/00 - Ecosystem Map|Ecosystem map]]
 - [[Maps/01 - Dependency Map|Dependency map]]
 - [[Maps/02 - Cross-Pollination Map|Cross-pollination map]]
