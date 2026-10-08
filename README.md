@@ -125,6 +125,21 @@ repeatable local check from the workspace root:
 ./scripts/Test-Documentation.ps1
 ```
 
+The separate semantic audit distinguishes declared `Stub` documents from
+current-authority specifications. Stubs remain counted documentation debt; they
+are not allowed to pass as completed content. Run it from the workspace root:
+
+```powershell
+./scripts/Test-DocumentationSemantics.ps1
+./scripts/Test-DocumentationSemantics.Tests.ps1
+```
+
+Use `-Enforce` only against a scoped corpus whose existing semantic findings
+have been resolved. The regression test checks that repeated stubs are counted
+but not treated as normative clones, while repeated current-authority prose is
+still flagged. This script is intentionally extracted from the older broad PR
+without importing its unrelated documentation rewrites.
+
 The separate YAML parse check is part of the future Woodpecker documentation
 pipeline. It validates `repos.yaml`, the OpenAPI profile, and institution
 deployment manifests with an open-source YAML parser.
