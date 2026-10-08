@@ -28,3 +28,18 @@ evidence:
     limitations:
       - Structural generation does not verify the semantic correctness of catalog declarations.
       - GitHub status is a point-in-time observation and may become stale.
+  - claimId: architecture.workload-submit.bindings.v1
+    claim: At the named common architecture commit, the contract suite validated the workload submission bindings, eight adversarial binding mutations, and the reproducible candidate bundle.
+    scope: common-psdc-architecture
+    state: structurally_validated
+    artifact: https://github.com/Post-Secondary-Digital-Commons/psdc-architecture/blob/a8a5b0f72d133957db24d7f7f2a184d02f08e6fd/contracts/traceability/workload-submit.trace.json
+    artifactDigest: sha256:7044aafa82216ce87c3a5924f467f98ab6278f4eb4f58af5d95a491a41fbea3e
+    revision: a8a5b0f72d133957db24d7f7f2a184d02f08e6fd
+    producer: Codex
+    verification: In a detached worktree at the revision, npm ci and npm run test:contracts exited 0; 36 schemas, 54 fixtures, eight binding mutations, and a 131-file reproducible bundle passed.
+    observedAt: "2026-10-08T06:16:56Z"
+    expiresAt: null
+    limitations:
+      - The verified source tree is immutable; the result does not apply to later commits without a rerun.
+      - Schema, parser, fixture, and mutation checks are structural evidence, not runtime authorization, transactionality, or provider behavior.
+      - Workload classification field parity, late lease acceptance, and authoritative reason adjudication remain D2 blockers.

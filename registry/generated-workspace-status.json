@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-07T23:33:13.572297+00:00",
+  "generatedAt": "2026-10-08T06:21:45.061152+00:00",
   "online": true,
-  "workspaceRoot": "workspace-command-center",
+  "workspaceRoot": "workspace-quality-20261008",
   "checkoutRoot": "psdc",
   "commonRepositories": [
     {
@@ -15,13 +15,7 @@
       "branch": "codex/dual-lane-ai-architecture-20261007",
       "dirty": true,
       "tag": "v0.1.0-draft",
-      "openPullRequests": [
-        {
-          "number": 10,
-          "title": "Adopt dual-lane adaptive AI sessions and governed workspace",
-          "url": "https://github.com/Post-Secondary-Digital-Commons/psdc-architecture/pull/10"
-        }
-      ],
+      "openPullRequests": [],
       "markdownFiles": 919,
       "stubs": 271,
       "declaredEvidence": {
@@ -557,6 +551,26 @@
       "declaredStatus": "planned",
       "checkoutStatus": "planned",
       "sync": "not-applicable"
+    }
+  ],
+  "evidenceAudit": [
+    {
+      "claimId": "workspace.catalog.v3",
+      "revision": "cc1b7af4a8624c383ccbb85f4eac79ad5794ed76",
+      "status": "digest_verified",
+      "reason": null
+    },
+    {
+      "claimId": "workspace.command-center.generator.v1",
+      "revision": "cc1b7af4a8624c383ccbb85f4eac79ad5794ed76",
+      "status": "digest_verified",
+      "reason": null
+    },
+    {
+      "claimId": "architecture.workload-submit.bindings.v1",
+      "revision": "a8a5b0f72d133957db24d7f7f2a184d02f08e6fd",
+      "status": "digest_verified",
+      "reason": null
     }
   ]
 }

@@ -10,6 +10,8 @@ $temporaryRoot = Join-Path ([IO.Path]::GetTempPath()) ("psdc-command-center-test
 New-Item -ItemType Directory -Path $temporaryRoot | Out-Null
 python $generator --workspace-root $Root --checkout-root $CheckoutRoot --output-root $temporaryRoot
 if ($LASTEXITCODE -ne 0) { throw "Command-center generator failed with exit code $LASTEXITCODE." }
+python (Join-Path $Root 'scripts\Test-EvidenceAudit.py') --checkout-root $CheckoutRoot
+if ($LASTEXITCODE -ne 0) { throw "Evidence audit mutation test failed with exit code $LASTEXITCODE." }
 
 $expected = @(
     'Maps\Generated\Workspace Command Center.md',
