@@ -5,10 +5,12 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import re
 import subprocess
 from pathlib import Path
+from urllib.parse import urlparse
 
 import jsonschema
 import yaml
@@ -154,6 +156,47 @@ def validate_catalog_semantics(catalog: dict) -> None:
         visit(repository_id)
 
 
+def audit_evidence_artifacts(evidence: dict, catalog: dict, workspace_root: Path,
+                             checkout_root: Path) -> list[dict]:
+    """Verify immutable artifact bytes and scope; do not claim tests were rerun."""
+    identities = {
+        (item["owner"].casefold(), item["id"].casefold()): checkout_root / item["path"]
+        for entry in catalog["repositories"]
+        for item in [entry["repository"], *entry["institutionOverlays"]]
+    }
+    rows = []
+    for record in evidence["evidence"]:
+        artifact = record["artifact"]
+        revision = record["revision"]
+        row = {"claimId": record["claimId"], "revision": revision, "status": "unverified", "reason": None}
+        parsed = urlparse(artifact)
+        if parsed.scheme:
+            parts = parsed.path.strip("/").split("/")
+            if parsed.scheme != "https" or parsed.netloc.casefold() != "github.com" or len(parts) < 5 or parts[2] != "blob" or parts[3] != revision:
+                row["reason"] = "Artifact URL is not an immutable GitHub blob at the claimed revision."
+                rows.append(row)
+                continue
+            repository = identities.get((parts[0].casefold(), parts[1].casefold()))
+            relative = "/".join(parts[4:])
+        else:
+            repository = workspace_root
+            relative = artifact.replace("\\", "/")
+        if not repository or not repository.exists() or not relative or relative.startswith("/") or ".." in Path(relative).parts:
+            row["reason"] = "Artifact repository or relative path is absent or unsafe."
+            rows.append(row)
+            continue
+        result = subprocess.run(["git", "-C", str(repository), "show", f"{revision}:{relative}"],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+        if result.returncode != 0:
+            row["reason"] = "Artifact does not resolve at the claimed commit in the local checkout."
+        elif "sha256:" + hashlib.sha256(result.stdout).hexdigest() != record["artifactDigest"]:
+            row["reason"] = "Artifact bytes do not match the registered SHA-256 digest."
+        else:
+            row["status"] = "digest_verified"
+        rows.append(row)
+    return rows
+
+
 def md_table(headers: list[str], rows: list[list[str]]) -> str:
     lines = ["| " + " | ".join(headers) + " |", "|" + "|".join(["---"] * len(headers)) + "|"]
     lines.extend("| " + " | ".join(str(cell).replace("|", "\\|") for cell in row) + " |" for row in rows)
@@ -166,6 +209,9 @@ def render_command_center(snapshot: dict, catalog: dict, evidence: dict) -> str:
     open_prs = sum(len([p for p in repo["openPullRequests"] if "number" in p]) for repo in common + overlays)
     missing = sum(1 for repo in common + overlays if not repo["exists"] and not repo["planned"])
     stubs = sum(repo["stubs"] for repo in common + overlays)
+    product_test_records = [record for record in evidence["evidence"]
+                            if record["state"] == "structurally_validated" and record["scope"].startswith("common-psdc-")]
+    verified_evidence = sum(row["status"] == "digest_verified" for row in snapshot["evidenceAudit"])
     query_errors = [
         f"{repo['id']}: {item['error']}"
         for repo in common + overlays
@@ -213,9 +259,9 @@ generatedAt: {snapshot['generatedAt']}
 - Broken-link count: **not assessed by this generator**; run `scripts/Test-Documentation.ps1` and ingest its report as evidence.
 - Semantic-clone count: **not asserted by this generator**; use the architecture semantic audit.
 - Security findings: **not assessed by this generator**; use pinned OpenSSF Scorecard and repository security scans.
-- Test status: **command-center schemas and catalog semantics passed during generation**; product-repository test results are not yet ingested.
+- Test status: **command-center schemas and catalog semantics passed during generation**; **{len(product_test_records)}** commit-bound common product test record(s) are indexed. Artifact digests resolve for **{verified_evidence}/{len(snapshot['evidenceAudit'])}** evidence records. This generator does not rerun their test commands or prove runtime behavior.
 - Accepted decisions: **the Decision Register reports the project-controlled defaults accepted**; external approvals and measured deployment evidence remain separate gates.
-- Next recommended vertical slice: **approve and merge the catalog/command-center contract, then make one repository report a signed evidence record end to end**.
+- Next recommended vertical slice: **reconcile workload classification fields and the remaining lease/settlement authority blockers, then prepare the bounded H-006 D2 admission packet**. The indexed product evidence is structural, not implementation.
 
 ## Repository state
 
@@ -262,11 +308,12 @@ def render_authority(authority: dict) -> str:
     return "\n".join(lines)
 
 
-def render_evidence(evidence: dict) -> str:
+def render_evidence(evidence: dict, audit: list[dict]) -> str:
+    by_id = {row["claimId"]: row for row in audit}
     rows = []
     for record in evidence["evidence"]:
-        rows.append([record["claimId"], record["scope"], record["state"], record["artifact"], record["artifactDigest"], record["revision"], record["verification"]])
-    return "# Evidence and Readiness Registry\n\n> Generated from `registry/evidence.yaml`. Evidence states are ordered: " + " -> ".join(EVIDENCE_ORDER) + ".\n\n" + md_table(["Claim", "Scope", "State", "Artifact", "SHA-256", "Revision", "Verification"], rows) + "\n"
+        rows.append([record["claimId"], record["scope"], record["state"], by_id[record["claimId"]]["status"], record["artifact"], record["artifactDigest"], record["revision"], record["verification"]])
+    return "# Evidence and Readiness Registry\n\n> Generated from `registry/evidence.yaml`. Evidence states are ordered: " + " -> ".join(EVIDENCE_ORDER) + ". `digest_verified` proves only that the artifact bytes match the named Git revision; it does not rerun the listed verification.\n\n" + md_table(["Claim", "Scope", "State", "Artifact digest check", "Artifact", "SHA-256", "Revision", "Verification claim"], rows) + "\n"
 
 
 def render_contract_explorer(checkout_root: Path) -> str:
@@ -312,6 +359,11 @@ def main() -> int:
     jsonschema.validate(catalog, json.loads((workspace_root / "schemas/repos.schema.json").read_text(encoding="utf-8")))
     jsonschema.validate(evidence, json.loads((workspace_root / "schemas/evidence.schema.json").read_text(encoding="utf-8")), format_checker=jsonschema.FormatChecker())
     validate_catalog_semantics(catalog)
+    evidence_audit = audit_evidence_artifacts(evidence, catalog, workspace_root, checkout_root)
+    invalid_evidence = [row for row in evidence_audit if row["status"] != "digest_verified"]
+    if invalid_evidence:
+        raise ValueError("Evidence artifact verification failed: " + "; ".join(
+            f"{row['claimId']}: {row['reason']}" for row in invalid_evidence))
 
     common = [inspect_checkout(entry, checkout_root, args.online) for entry in catalog["repositories"]]
     overlays = []
@@ -326,6 +378,7 @@ def main() -> int:
         "checkoutRoot": checkout_root.name,
         "commonRepositories": common,
         "institutionOverlays": overlays,
+        "evidenceAudit": evidence_audit,
     }
 
     generated = output_root / "Maps" / "Generated"
@@ -334,7 +387,7 @@ def main() -> int:
         "Workspace Command Center.md": render_command_center(snapshot, catalog, evidence),
         "Repository and Dependency Catalog.md": render_catalog(catalog),
         "Authority Map.md": render_authority(authority),
-        "Evidence and Readiness Registry.md": render_evidence(evidence),
+        "Evidence and Readiness Registry.md": render_evidence(evidence, evidence_audit),
         "Contract Explorer.md": render_contract_explorer(checkout_root),
     }
     for name, content in outputs.items():

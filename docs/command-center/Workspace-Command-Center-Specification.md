@@ -92,6 +92,14 @@ artifact was produced; PSDC applies the same discipline to documentation,
 contract, test, and deployment evidence. See the
 [SLSA provenance specification](https://slsa.dev/spec/v1.2/).
 
+The current generator resolves each registered artifact from the named Git
+revision and compares the SHA-256 of the **Git blob bytes** with the registry.
+It rejects a missing revision, a mismatched digest, or an artifact URL that
+does not name the claimed commit. This check does not execute the recorded
+test command, validate a signature, or prove the producer's independence.
+Windows checkout line endings may differ from Git blob bytes; the registry
+must use the latter. A structural test claim retains only its bounded state.
+
 ### Contract explorer
 
 The generated explorer inventories JSON Schema, OpenAPI, AsyncAPI, state

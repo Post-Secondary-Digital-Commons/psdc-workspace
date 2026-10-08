@@ -1,7 +1,7 @@
 ---
 tags: [generated, command-center, evidence]
 generated: true
-generatedAt: 2026-10-07T23:33:13.572297+00:00
+generatedAt: 2026-10-08T06:21:45.061152+00:00
 ---
 
 # Workspace Command Center
@@ -18,7 +18,7 @@ generatedAt: 2026-10-07T23:33:13.572297+00:00
 
 - Common architecture baseline tag: **v0.1.0-draft**
 - Catalog entries: **11 common / 11 institution overlays**
-- Open pull requests observed: **2**
+- Open pull requests observed: **1**
 - Online observation errors: **0**; inspect `registry/generated-workspace-status.json` for bounded error details.
 - Missing expected checkouts: **0**
 - Markdown documents observed: **1696**
@@ -26,15 +26,15 @@ generatedAt: 2026-10-07T23:33:13.572297+00:00
 - Broken-link count: **not assessed by this generator**; run `scripts/Test-Documentation.ps1` and ingest its report as evidence.
 - Semantic-clone count: **not asserted by this generator**; use the architecture semantic audit.
 - Security findings: **not assessed by this generator**; use pinned OpenSSF Scorecard and repository security scans.
-- Test status: **command-center schemas and catalog semantics passed during generation**; product-repository test results are not yet ingested.
+- Test status: **command-center schemas and catalog semantics passed during generation**; **1** commit-bound common product test record(s) are indexed. Artifact digests resolve for **3/3** evidence records. This generator does not rerun their test commands or prove runtime behavior.
 - Accepted decisions: **the Decision Register reports the project-controlled defaults accepted**; external approvals and measured deployment evidence remain separate gates.
-- Next recommended vertical slice: **approve and merge the catalog/command-center contract, then make one repository report a signed evidence record end to end**.
+- Next recommended vertical slice: **reconcile workload classification fields and the remaining lease/settlement authority blockers, then prepare the bounded H-006 D2 admission packet**. The indexed product evidence is structural, not implementation.
 
 ## Repository state
 
 | Repository | Authority | Checkout status | Lifecycle | Revision | Open PRs | Docs | Stubs | Overlay sync | Contracts | Implementation |
 |---|---|---|---|---|---|---|---|---|---|---|
-| psdc-architecture | common | present | specification | d4cd881d dirty | 1 | 919 | 271 | not-applicable | partial | absent |
+| psdc-architecture | common | present | specification | d4cd881d dirty | 0 | 919 | 271 | not-applicable | partial | absent |
 | psdc-cloud | common | present | specification | 8ec43433 | 0 | 11 | 0 | not-applicable | partial | absent |
 | psdc-ai | common | present | specification | d016ab43 | 0 | 25 | 0 | not-applicable | partial | absent |
 | psdc-compute | common | present | specification | f85a9771 | 0 | 18 | 0 | not-applicable | partial | absent |
