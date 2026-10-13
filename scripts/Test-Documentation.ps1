@@ -4,10 +4,14 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+if ($PSVersionTable.PSVersion.Major -lt 7) {
+    throw 'Documentation validation requires PowerShell 7 or newer.'
+}
 $rootPath = (Resolve-Path -LiteralPath $Root).Path
 $failures = [System.Collections.Generic.List[string]]::new()
+$ignoredDirectories = '[\\/](?:\.git|node_modules|\.venv|venv|dist|build|vendor)[\\/]'
 $markdownFiles = @(Get-ChildItem -LiteralPath $rootPath -Recurse -File -Filter '*.md' |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
+    Where-Object { $_.FullName -notmatch $ignoredDirectories })
 
 function Add-Failure([string]$Kind, [string]$Source, [string]$Target) {
     $relative = [IO.Path]::GetRelativePath($rootPath, $Source)
@@ -42,6 +46,7 @@ foreach ($file in $markdownFiles) {
 
 foreach ($file in $markdownFiles) {
     $content = Get-Content -LiteralPath $file.FullName -Raw
+    if ($null -eq $content) { $content = '' }
 
     foreach ($match in [regex]::Matches($content, '(?<!\!)\[[^\]]*\]\((?<target>[^)]+)\)')) {
         $rawTarget = $match.Groups['target'].Value
@@ -69,9 +74,9 @@ foreach ($file in $markdownFiles) {
 }
 
 $jsonFiles = @(Get-ChildItem -LiteralPath $rootPath -Recurse -File -Filter '*.json' |
-    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' })
+    Where-Object { $_.FullName -notmatch $ignoredDirectories })
 foreach ($file in $jsonFiles) {
-    try { Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -Depth 100 | Out-Null }
+    try { Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json -AsHashtable -Depth 100 | Out-Null }
     catch { Add-Failure 'invalid-json' $file.FullName $_.Exception.Message }
 }
 
